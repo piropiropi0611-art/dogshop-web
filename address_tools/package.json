@@ -1,0 +1,11 @@
+{
+  "name": "dogshop-address-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "extract:maps-address": "node ./extract_address_from_maps_browser.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.58.2"
+  }
+}

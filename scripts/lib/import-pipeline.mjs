@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export const projectRoot = path.resolve(__dirname, "..", "..");
-const datasetsDirectory = path.resolve(projectRoot, "..", "datasets");
+const datasetsDirectory = path.resolve(projectRoot, "datasets");
 
 export function resolveProjectPath(relativePath) {
   return path.resolve(projectRoot, relativePath);

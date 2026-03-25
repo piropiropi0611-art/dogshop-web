@@ -1,0 +1,44 @@
+{
+  "datasetId": "fuchu",
+  "label": "東京都府中市",
+  "paths": {
+    "currentShops": "../../src/data/shops.json",
+    "previewJson": "preview.json",
+    "structuredCsv": "structured.csv",
+    "researchCsv": "research.csv"
+  },
+  "prefixes": {
+    "previewId": "fuchu-import",
+    "previewSlug": "fuchu-import",
+    "publicSlug": "fuchu"
+  },
+  "padding": {
+    "preview": 3,
+    "publicSlug": 2
+  },
+  "filters": {
+    "excludeWhenHoursContains": "閉店"
+  },
+  "columns": {
+    "structured": {
+      "title": "title",
+      "name": "final_name",
+      "address": "final_address",
+      "hours": "final_hours",
+      "closedDays": "final_closed_days",
+      "parking": "final_parking",
+      "dogArea": "final_dog_area",
+      "dogMenu": "final_dog_menu",
+      "rules": "final_rules",
+      "intro": "intro_seed",
+      "memo": "memo_seed",
+      "instagramUrl": "instagram_url",
+      "publishedSlug": "published_slug"
+    },
+    "research": {
+      "title": "title",
+      "googleMapsUrl": "google_maps_url",
+      "csvMemo": "csv_memo"
+    }
+  }
+}
