@@ -7,9 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "build:data": "node ./scripts/build-shops.mjs",
-    "build:data:fuchu-preview": "node ./scripts/build-fuchu-import-preview.mjs",
-    "build:data:fuchu-merge": "node ./scripts/merge-fuchu-shops.mjs"
+    "build:data:preview": "node ./scripts/build-import-preview.mjs",
+    "build:data:merge": "node ./scripts/merge-import-shops.mjs"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

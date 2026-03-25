@@ -1,26 +1,72 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const projectRoot = path.resolve(__dirname, "..");
 
-const STRUCTURED_CSV_PATH = path.resolve(
-  projectRoot,
-  "../fuchu_posts_final_structured.csv",
-);
-const RESEARCH_CSV_PATH = path.resolve(
-  projectRoot,
-  "../fuchu_posts_research.csv",
-);
-const CURRENT_SHOPS_PATH = path.resolve(projectRoot, "src/data/shops.json");
-const OUTPUT_JSON_PATH = path.resolve(
-  projectRoot,
-  "src/data/fuchu-import-preview.json",
-);
+export const projectRoot = path.resolve(__dirname, "..", "..");
+const datasetsDirectory = path.resolve(projectRoot, "..", "datasets");
 
-function parseCsv(input) {
+export function resolveProjectPath(relativePath) {
+  return path.resolve(projectRoot, relativePath);
+}
+
+export async function loadDatasetConfig(datasetId) {
+  const configPath = path.resolve(datasetsDirectory, datasetId, "dataset.json");
+  const configRaw = await readFile(configPath, "utf8");
+  const config = JSON.parse(configRaw);
+
+  if (!config?.datasetId) {
+    throw new Error(`Dataset config is missing datasetId: ${configPath}`);
+  }
+
+  return {
+    ...config,
+    configPath,
+    configDirectory: path.dirname(configPath),
+  };
+}
+
+export function resolveDatasetPath(config, relativePath) {
+  return path.resolve(config.configDirectory, relativePath);
+}
+
+export function parseArgs(argv) {
+  const args = {};
+
+  for (let index = 0; index < argv.length; index += 1) {
+    const token = argv[index];
+
+    if (!token.startsWith("--")) {
+      continue;
+    }
+
+    const keyValue = token.slice(2);
+    const separatorIndex = keyValue.indexOf("=");
+
+    if (separatorIndex >= 0) {
+      const key = keyValue.slice(0, separatorIndex);
+      const value = keyValue.slice(separatorIndex + 1);
+      args[key] = value;
+      continue;
+    }
+
+    const next = argv[index + 1];
+
+    if (!next || next.startsWith("--")) {
+      args[keyValue] = true;
+      continue;
+    }
+
+    args[keyValue] = next;
+    index += 1;
+  }
+
+  return args;
+}
+
+export function parseCsv(input) {
   const rows = [];
   let current = "";
   let row = [];
@@ -75,14 +121,14 @@ function parseCsv(input) {
   return rows;
 }
 
-function rowsToObjects(rows) {
+export function rowsToObjects(rows) {
   const [header, ...dataRows] = rows;
   return dataRows.map((row) =>
     Object.fromEntries(header.map((name, index) => [name, row[index] ?? ""])),
   );
 }
 
-function normalizeMatchKey(value) {
+export function normalizeMatchKey(value) {
   return String(value ?? "")
     .normalize("NFKC")
     .toLowerCase()
@@ -91,11 +137,11 @@ function normalizeMatchKey(value) {
     .replace(/株式会社/g, "");
 }
 
-function stripPostalCode(address) {
+export function stripPostalCode(address) {
   return String(address ?? "").replace(/^〒\d{3}-?\d{4}\s*/u, "").trim();
 }
 
-function parseLocation(address) {
+export function parseLocation(address) {
   const baseAddress = stripPostalCode(address);
   const match = baseAddress.match(
     /^(東京都|北海道|(?:京都|大阪)府|.+?県)(.+?(?:市|区|町|村))/,
@@ -114,7 +160,7 @@ function parseLocation(address) {
   };
 }
 
-function normalizeDogAreaCategory(dogArea) {
+export function normalizeDogAreaCategory(dogArea) {
   if (dogArea.includes("店内")) {
     return "店内OK";
   }
@@ -135,7 +181,7 @@ function normalizeDogAreaCategory(dogArea) {
   return "その他";
 }
 
-function normalizeDogAreaFilterGroup(dogAreaCategory) {
+export function normalizeDogAreaFilterGroup(dogAreaCategory) {
   if (dogAreaCategory === "店内OK") {
     return "店内OK";
   }
@@ -150,34 +196,17 @@ function normalizeDogAreaFilterGroup(dogAreaCategory) {
   return "その他";
 }
 
-function buildTabelogUrl({ name, city }) {
+export function buildTabelogUrl({ name, city }) {
   const query = `${name} ${city}`.trim();
   return `https://tabelog.com/rstLst/?sk=${encodeURIComponent(query)}`;
 }
 
-function parseParkingSpaces(parking) {
+export function parseParkingSpaces(parking) {
   const match = String(parking).match(/(\d+)台/u);
   return match ? Number(match[1]) : null;
 }
 
-function buildKeywordText(shop) {
-  return [
-    shop.name,
-    shop.prefecture,
-    shop.city,
-    shop.address,
-    shop.visitStatus,
-    shop.intro,
-    shop.memo,
-    shop.sourceCsvMemo,
-    shop.dogArea,
-    ...shop.rules,
-  ]
-    .filter(Boolean)
-    .join(" ");
-}
-
-function sanitizeText(value) {
+export function sanitizeText(value) {
   return String(value ?? "")
     .replace(/\r?\n+/g, "\n")
     .replace(/[ \t]+/g, " ")
@@ -204,28 +233,66 @@ function isUsableRule(rule) {
   );
 }
 
-function splitRules(value) {
+export function splitRules(value) {
   return String(value ?? "")
     .split("/")
     .map((part) => sanitizeText(part))
     .filter(isUsableRule);
 }
 
-function buildSlug(row, index) {
-  if (row.published_slug) {
-    return row.published_slug;
+export function sanitizeDogArea(value) {
+  const text = sanitizeText(value);
+  if (!text) {
+    return "同伴条件は店舗案内に準ずる";
   }
-
-  return `fuchu-import-${String(index + 1).padStart(3, "0")}`;
+  return text;
 }
 
-async function sleep(ms) {
+export function buildKeywordText(shop) {
+  return [
+    shop.name,
+    shop.prefecture,
+    shop.city,
+    shop.address,
+    shop.visitStatus,
+    shop.intro,
+    shop.memo,
+    shop.sourceCsvMemo,
+    shop.dogArea,
+    ...shop.rules,
+  ]
+    .filter(Boolean)
+    .join(" ");
+}
+
+export function formatSequence(prefix, sequenceNumber, minimumWidth = 2) {
+  const width = Math.max(minimumWidth, String(sequenceNumber).length);
+  return `${prefix}-${String(sequenceNumber).padStart(width, "0")}`;
+}
+
+export function getMaxNumericSuffix(values, prefix) {
+  const pattern = new RegExp(`^${prefix}-(\\d+)$`);
+  let max = 0;
+
+  for (const value of values) {
+    const match = String(value ?? "").match(pattern);
+    if (!match) {
+      continue;
+    }
+
+    max = Math.max(max, Number(match[1]));
+  }
+
+  return max;
+}
+
+export async function sleep(ms) {
   await new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
 }
 
-async function geocodeAddress(address, existingShop) {
+export async function geocodeAddress(address, existingShop) {
   if (existingShop?.lat && existingShop?.lng) {
     return {
       lat: existingShop.lat,
@@ -277,84 +344,7 @@ async function geocodeAddress(address, existingShop) {
   };
 }
 
-function sanitizeDogArea(value) {
-  const text = sanitizeText(value);
-  if (!text) {
-    return "同伴条件は店舗案内に準ずる";
-  }
-  return text;
+export async function writeJsonFile(targetPath, value) {
+  await mkdir(path.dirname(targetPath), { recursive: true });
+  await writeFile(targetPath, `${JSON.stringify(value, null, 2)}\n`, "utf8");
 }
-
-async function main() {
-  const [structuredCsv, researchCsv, currentShopsRaw] = await Promise.all([
-    readFile(STRUCTURED_CSV_PATH, "utf8"),
-    readFile(RESEARCH_CSV_PATH, "utf8"),
-    readFile(CURRENT_SHOPS_PATH, "utf8"),
-  ]);
-
-  const structuredRows = rowsToObjects(parseCsv(structuredCsv)).filter(
-    (row) => !String(row.final_hours).includes("閉店"),
-  );
-  const researchRows = rowsToObjects(parseCsv(researchCsv));
-  const researchByTitle = new Map(
-    researchRows.map((row) => [normalizeMatchKey(row.title), row]),
-  );
-  const currentShops = JSON.parse(currentShopsRaw);
-  const currentBySlug = new Map(currentShops.map((shop) => [shop.slug, shop]));
-
-  const shops = [];
-
-  for (const [index, row] of structuredRows.entries()) {
-    const research =
-      researchByTitle.get(normalizeMatchKey(row.title)) ?? null;
-    const existingShop = row.published_slug
-      ? currentBySlug.get(row.published_slug) ?? null
-      : null;
-    const { prefecture, city } = parseLocation(row.final_address);
-    const geocoded = await geocodeAddress(row.final_address, existingShop);
-    const dogAreaCategory = normalizeDogAreaCategory(row.final_dog_area);
-    const shop = {
-      id: `fuchu-import-${String(index + 1).padStart(3, "0")}`,
-      slug: buildSlug(row, index),
-      isVisible: existingShop?.isVisible ?? true,
-      name: sanitizeText(row.final_name),
-      prefecture: existingShop?.prefecture || prefecture,
-      city: existingShop?.city || city,
-      address: stripPostalCode(row.final_address),
-      lat: geocoded.lat,
-      lng: geocoded.lng,
-      geocodeSource: geocoded.geocodeSource,
-      geocodeStatus: geocoded.geocodeStatus,
-      intro: sanitizeText(row.intro_seed).replace(/。 /g, "。\n"),
-      keywordText: "",
-      dogArea: sanitizeDogArea(row.final_dog_area),
-      dogAreaCategory,
-      dogAreaFilterGroup: normalizeDogAreaFilterGroup(dogAreaCategory),
-      hours: sanitizeText(row.final_hours),
-      closedDays: sanitizeText(row.final_closed_days),
-      parking: sanitizeText(row.final_parking),
-      parkingSpaces: parseParkingSpaces(row.final_parking),
-      dogMenu: sanitizeText(row.final_dog_menu) || "なし",
-      rules: splitRules(row.final_rules),
-      memo: sanitizeText(row.memo_seed) || null,
-      googleMapsUrl: research?.google_maps_url ?? existingShop?.googleMapsUrl ?? null,
-      tabelogUrl:
-        existingShop?.tabelogUrl ??
-        buildTabelogUrl({ name: row.final_name, city: existingShop?.city || city }),
-      instagramUrl: sanitizeText(row.instagram_url) || existingShop?.instagramUrl || null,
-      visitStatus: existingShop?.visitStatus ?? "ピロプー訪店済",
-      sourceCsvMemo: sanitizeText(research?.csv_memo ?? "") || null,
-    };
-
-    shop.keywordText = buildKeywordText(shop);
-    shops.push(shop);
-  }
-
-  await writeFile(OUTPUT_JSON_PATH, `${JSON.stringify(shops, null, 2)}\n`, "utf8");
-  console.log(`Generated ${shops.length} preview shops at ${OUTPUT_JSON_PATH}`);
-}
-
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
