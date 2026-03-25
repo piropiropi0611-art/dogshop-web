@@ -185,7 +185,7 @@ export function ShopBrowser({ shops }: ShopBrowserProps) {
 
       {filteredShops.length > 0 ? (
         <div className="space-y-5">
-          <div className="overflow-hidden rounded-[2rem] border border-black/10 bg-white p-3 shadow-sm shadow-black/5">
+          <div className="hidden overflow-hidden rounded-[2rem] border border-black/10 bg-white p-3 shadow-sm shadow-black/5 md:sticky md:top-4 md:z-20 md:block">
             <div className="mb-3 flex items-center justify-between gap-3 px-2 pt-2">
               <div>
                 <h3 className="text-base font-semibold text-zinc-900">地図</h3>
@@ -194,7 +194,11 @@ export function ShopBrowser({ shops }: ShopBrowserProps) {
                 </p>
               </div>
             </div>
-            <ShopsMap shops={filteredShops} activeSlug={activeSlug} />
+            <ShopsMap
+              shops={filteredShops}
+              activeSlug={activeSlug}
+              heightClassName="h-[220px] xl:h-[240px]"
+            />
           </div>
           <div className="grid gap-5 lg:grid-cols-2">
             {filteredShops.map((shop) => (

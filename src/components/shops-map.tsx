@@ -7,17 +7,27 @@ import type { Shop } from "@/types/shop";
 type ShopsMapProps = {
   shops: Shop[];
   activeSlug: string | null;
+  focusMode?: "active" | "bounds" | "detail";
+  heightClassName?: string;
 };
 
 const LeafletMap = dynamic(() => import("@/components/shops-map-canvas"), {
   ssr: false,
-  loading: () => (
-    <div className="flex h-[520px] items-center justify-center rounded-[2rem] bg-zinc-100 text-sm text-zinc-500">
-      地図を読み込み中...
-    </div>
-  ),
+  loading: () => null,
 });
 
-export function ShopsMap({ shops, activeSlug }: ShopsMapProps) {
-  return <LeafletMap shops={shops} activeSlug={activeSlug} />;
+export function ShopsMap({
+  shops,
+  activeSlug,
+  focusMode = "active",
+  heightClassName = "h-[520px]",
+}: ShopsMapProps) {
+  return (
+    <LeafletMap
+      shops={shops}
+      activeSlug={activeSlug}
+      focusMode={focusMode}
+      heightClassName={heightClassName}
+    />
+  );
 }

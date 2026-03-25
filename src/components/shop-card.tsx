@@ -37,14 +37,7 @@ export function ShopCard({ shop, isActive = false, onSelect }: ShopCardProps) {
       <h2 className="text-xl font-semibold tracking-tight text-zinc-900">
         {shop.name}
       </h2>
-      <div className="mt-2 flex items-start justify-between gap-3">
-        <p className="text-sm leading-6 text-zinc-600">{shop.address}</p>
-        <ShopLinkIcons
-          googleMapsUrl={shop.googleMapsUrl}
-          tabelogUrl={shop.tabelogUrl}
-          instagramUrl={shop.instagramUrl}
-        />
-      </div>
+      <p className="mt-2 text-sm leading-6 text-zinc-600">{shop.address}</p>
 
       <dl className="mt-5 space-y-2 text-sm text-zinc-700">
         <div>
@@ -77,6 +70,12 @@ export function ShopCard({ shop, isActive = false, onSelect }: ShopCardProps) {
         >
           詳細を見る
         </Link>
+        <ShopLinkIcons
+          googleMapsUrl={shop.googleMapsUrl}
+          tabelogUrl={shop.tabelogUrl}
+          instagramUrl={shop.instagramUrl}
+          className="ml-auto"
+        />
       </div>
     </article>
   );

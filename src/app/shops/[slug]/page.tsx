@@ -36,6 +36,7 @@ export async function generateMetadata({
 
 export default async function ShopPage({ params }: ShopPageProps) {
   const { slug } = await params;
+  const shops = getAllShops();
   const shop = getShopBySlug(slug);
 
   if (!shop) {
@@ -160,18 +161,13 @@ export default async function ShopPage({ params }: ShopPageProps) {
             <div>
               <h2 className="text-xl font-semibold text-zinc-900">地図</h2>
               <p className="mt-1 text-sm text-zinc-600">
-                OpenStreetMap + Leaflet で店舗周辺を確認できます。
+                OpenStreetMap + Leaflet で対象店舗と他店舗の位置関係を確認できます。
               </p>
             </div>
           </div>
 
           {shop.lat && shop.lng ? (
-            <ShopMap
-              name={shop.name}
-              address={shop.address}
-              lat={shop.lat}
-              lng={shop.lng}
-            />
+            <ShopMap shops={shops} activeSlug={shop.slug} />
           ) : (
             <div className="flex h-[360px] items-center justify-center rounded-[2rem] bg-zinc-100 text-sm text-zinc-500">
               座標情報がまだありません。

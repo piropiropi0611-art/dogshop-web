@@ -6,14 +6,22 @@ import type {
   VisitStatus,
 } from "@/types/shop";
 
-const shops = shopsData as Shop[];
+function normalizeShop(shop: Shop): Shop {
+  return {
+    ...shop,
+    isVisible: shop.isVisible !== false,
+  };
+}
+
+const shops = (shopsData as Shop[]).map(normalizeShop);
+const visibleShops = shops.filter((shop) => shop.isVisible);
 
 export function getAllShops(): Shop[] {
-  return shops;
+  return visibleShops;
 }
 
 export function getShopBySlug(slug: string): Shop | undefined {
-  return shops.find((shop) => shop.slug === slug);
+  return visibleShops.find((shop) => shop.slug === slug);
 }
 
 export function getPrefectures(): string[] {

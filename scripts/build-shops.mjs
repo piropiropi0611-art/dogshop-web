@@ -485,6 +485,7 @@ async function main() {
     const shop = {
       id: `shop-${String(index + 1).padStart(2, "0")}`,
       slug: `fuchu-${String(index + 1).padStart(2, "0")}`,
+      isVisible: true,
       name,
       prefecture,
       city,

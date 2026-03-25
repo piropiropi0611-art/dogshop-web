@@ -11,6 +11,7 @@ export type VisitStatus = "ピロプー訪店済" | "未訪店";
 export type Shop = {
   id: string;
   slug: string;
+  isVisible?: boolean;
   name: string;
   prefecture: string;
   city: string;
