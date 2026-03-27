@@ -1,7 +1,7 @@
 export type DogAreaCategory =
   | "店内OK"
-  | "テラス席のみ"
-  | "外席のみ"
+  | "テラス席OK"
+  | "外席OK"
   | "その他";
 
 export type DogAreaFilterGroup = "店内OK" | "テラス・外席" | "その他";
@@ -23,8 +23,10 @@ export type Shop = {
   intro: string;
   keywordText: string;
   dogArea: string;
-  dogAreaCategory: DogAreaCategory;
-  dogAreaFilterGroup: DogAreaFilterGroup;
+  dogAreaCategories: DogAreaCategory[];
+  dogAreaFilterGroups: DogAreaFilterGroup[];
+  dogAreaCategory?: DogAreaCategory;
+  dogAreaFilterGroup?: DogAreaFilterGroup;
   hours: string;
   closedDays: string;
   parking: string;

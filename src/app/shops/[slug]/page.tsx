@@ -63,9 +63,14 @@ export default async function ShopPage({ params }: ShopPageProps) {
             <span className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold text-zinc-700">
               {shop.city}
             </span>
-            <span className="rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700">
-              {shop.dogAreaCategory}
-            </span>
+            {shop.dogAreaCategories.map((category) => (
+              <span
+                key={category}
+                className="rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700"
+              >
+                {category}
+              </span>
+            ))}
             <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
               {shop.visitStatus}
             </span>

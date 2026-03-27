@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 
 import { ShopCard } from "@/components/shop-card";
 import { ShopsMap } from "@/components/shops-map";
-import type { Shop } from "@/types/shop";
+import type { DogAreaFilterGroup, Shop, VisitStatus } from "@/types/shop";
 
 type ShopBrowserProps = {
   shops: Shop[];
@@ -14,8 +14,8 @@ export function ShopBrowser({ shops }: ShopBrowserProps) {
   const [prefecture, setPrefecture] = useState("");
   const [city, setCity] = useState("");
   const [keyword, setKeyword] = useState("");
-  const [dogArea, setDogArea] = useState("");
-  const [visitStatus, setVisitStatus] = useState("");
+  const [dogArea, setDogArea] = useState<DogAreaFilterGroup | "">("");
+  const [visitStatus, setVisitStatus] = useState<VisitStatus | "">("");
   const [selectedSlug, setSelectedSlug] = useState<string | null>(
     shops[0]?.slug ?? null,
   );
@@ -35,9 +35,9 @@ export function ShopBrowser({ shops }: ShopBrowserProps) {
 
   const dogAreas = useMemo(
     () =>
-      Array.from(new Set(shops.map((shop) => shop.dogAreaFilterGroup))).filter(
-        Boolean,
-      ),
+      Array.from(
+        new Set(shops.flatMap((shop) => shop.dogAreaFilterGroups)),
+      ) as DogAreaFilterGroup[],
     [shops],
   );
 
@@ -58,7 +58,7 @@ export function ShopBrowser({ shops }: ShopBrowserProps) {
         return false;
       }
 
-      if (dogArea && shop.dogAreaFilterGroup !== dogArea) {
+      if (dogArea && !shop.dogAreaFilterGroups.includes(dogArea)) {
         return false;
       }
 
@@ -134,7 +134,9 @@ export function ShopBrowser({ shops }: ShopBrowserProps) {
             <span>同伴エリア</span>
             <select
               value={dogArea}
-              onChange={(event) => setDogArea(event.target.value)}
+              onChange={(event) =>
+                setDogArea(event.target.value as DogAreaFilterGroup | "")
+              }
               className="w-full rounded-2xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 outline-none transition focus:border-green-600"
             >
               <option value="">すべて</option>
@@ -150,7 +152,9 @@ export function ShopBrowser({ shops }: ShopBrowserProps) {
             <span>訪店ステータス</span>
             <select
               value={visitStatus}
-              onChange={(event) => setVisitStatus(event.target.value)}
+              onChange={(event) =>
+                setVisitStatus(event.target.value as VisitStatus | "")
+              }
               className="w-full rounded-2xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 outline-none transition focus:border-green-600"
             >
               <option value="">すべて</option>

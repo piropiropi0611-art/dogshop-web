@@ -160,40 +160,104 @@ export function parseLocation(address) {
   };
 }
 
-export function normalizeDogAreaCategory(dogArea) {
-  if (dogArea.includes("店内")) {
-    return "店内OK";
-  }
+const DOG_AREA_CATEGORY_ORDER = ["店内OK", "テラス席OK", "外席OK", "その他"];
+const DOG_AREA_FILTER_GROUP_ORDER = ["店内OK", "テラス・外席", "その他"];
 
-  if (dogArea.includes("テラス") || dogArea.includes("サンルーム")) {
-    return "テラス席のみ";
-  }
+function sortByOrder(values, order) {
+  return [...values].sort(
+    (left, right) => order.indexOf(left) - order.indexOf(right),
+  );
+}
+
+export function normalizeDogAreaCategories(dogAreaText) {
+  const text = sanitizeText(dogAreaText);
+  const categories = new Set();
+  const hasTerraceTerm = /(テラス|サンルーム)/u.test(text);
+  const hasOutdoorTerm = /(外席|屋外|ベンチ|店頭|軒先)/u.test(text);
+  const hasDistinctTerraceAndOutdoorTerm =
+    /(テラス・屋外席|テラス・外席|テラス席と外席|テラス席と屋外席|外席とテラス席|屋外席とテラス席|テラスと外席|テラスと屋外席)/u.test(
+      text,
+    );
+  const hasOutdoorOnlyContext =
+    /(外席のみ|店頭ベンチ|ベンチ席|キッチンカー前|屋外席|外席・ベンチ席)/u.test(
+      text,
+    );
 
   if (
-    dogArea.includes("外席") ||
-    dogArea.includes("屋外") ||
-    dogArea.includes("ベンチ") ||
-    dogArea.includes("店頭")
+    /(店内OK|店内同伴|店内利用|店内入店|店内ワンコ|店内.*(同伴|利用|入店|ワンコ|OK|可)|室内.*(同伴|利用|入店|ワンコ|OK|可)|美容室内.*(同伴|利用|入店|ワンコ|OK|可)|カフェスペース.*(同伴|利用|入店|ワンコ|OK|可))/u.test(
+      text,
+    )
   ) {
-    return "外席のみ";
+    categories.add("店内OK");
+  }
+
+  if (hasTerraceTerm) {
+    categories.add("テラス席OK");
+  }
+
+  if (hasOutdoorTerm && (!hasTerraceTerm || hasDistinctTerraceAndOutdoorTerm || hasOutdoorOnlyContext)) {
+    categories.add("外席OK");
+  }
+
+  if (categories.size === 0) {
+    categories.add("その他");
+  }
+
+  return sortByOrder(categories, DOG_AREA_CATEGORY_ORDER);
+}
+
+export function normalizeDogAreaCategory(dogAreaText) {
+  return normalizeDogAreaCategories(dogAreaText)[0];
+}
+
+export function canonicalizeDogAreaCategory(category) {
+  if (category === "テラス席のみ") {
+    return "テラス席OK";
+  }
+
+  if (category === "外席のみ") {
+    return "外席OK";
+  }
+
+  if (DOG_AREA_CATEGORY_ORDER.includes(category)) {
+    return category;
   }
 
   return "その他";
 }
 
-export function normalizeDogAreaFilterGroup(dogAreaCategory) {
-  if (dogAreaCategory === "店内OK") {
-    return "店内OK";
+export function canonicalizeDogAreaCategories(categories = []) {
+  const normalized = categories
+    .map((category) => canonicalizeDogAreaCategory(category))
+    .filter(Boolean);
+
+  return sortByOrder(new Set(normalized), DOG_AREA_CATEGORY_ORDER);
+}
+
+export function normalizeDogAreaFilterGroups(dogAreaCategories) {
+  const groups = new Set();
+  const canonicalCategories = canonicalizeDogAreaCategories(dogAreaCategories);
+
+  if (canonicalCategories.includes("店内OK")) {
+    groups.add("店内OK");
   }
 
   if (
-    dogAreaCategory === "テラス席のみ" ||
-    dogAreaCategory === "外席のみ"
+    canonicalCategories.includes("テラス席OK") ||
+    canonicalCategories.includes("外席OK")
   ) {
-    return "テラス・外席";
+    groups.add("テラス・外席");
   }
 
-  return "その他";
+  if (groups.size === 0) {
+    groups.add("その他");
+  }
+
+  return sortByOrder(groups, DOG_AREA_FILTER_GROUP_ORDER);
+}
+
+export function normalizeDogAreaFilterGroup(dogAreaCategory) {
+  return normalizeDogAreaFilterGroups([dogAreaCategory])[0];
 }
 
 export function buildTabelogUrl({ name, city }) {

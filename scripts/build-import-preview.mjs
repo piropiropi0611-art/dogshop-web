@@ -4,11 +4,12 @@ import { fileURLToPath } from "node:url";
 import {
   buildKeywordText,
   buildTabelogUrl,
+  canonicalizeDogAreaCategories,
   formatSequence,
   geocodeAddress,
   loadDatasetConfig,
-  normalizeDogAreaCategory,
-  normalizeDogAreaFilterGroup,
+  normalizeDogAreaCategories,
+  normalizeDogAreaFilterGroups,
   normalizeMatchKey,
   parseArgs,
   parseCsv,
@@ -93,8 +94,19 @@ export async function buildImportPreview(options = {}) {
     const rawAddress = row[structuredColumns.address];
     const { prefecture, city } = parseLocation(rawAddress);
     const geocoded = await geocodeAddress(rawAddress, existingShop);
-    const dogAreaCategory = normalizeDogAreaCategory(
+    const dogAreaContext = [
       row[structuredColumns.dogArea] ?? "",
+      research?.[researchColumns.csvMemo] ?? "",
+      existingShop?.sourceCsvMemo ?? "",
+      existingShop?.memo ?? "",
+    ]
+      .filter(Boolean)
+      .join(" ");
+    const dogAreaCategories = Array.from(
+      new Set(canonicalizeDogAreaCategories([
+        ...(existingShop?.dogAreaCategory ? [existingShop.dogAreaCategory] : []),
+        ...normalizeDogAreaCategories(dogAreaContext),
+      ])),
     );
     const shop = {
       id: formatSequence(previewPrefix, index + 1, previewPadding),
@@ -113,8 +125,8 @@ export async function buildImportPreview(options = {}) {
       intro: sanitizeText(row[structuredColumns.intro]).replace(/。 /g, "。\n"),
       keywordText: "",
       dogArea: sanitizeDogArea(row[structuredColumns.dogArea]),
-      dogAreaCategory,
-      dogAreaFilterGroup: normalizeDogAreaFilterGroup(dogAreaCategory),
+      dogAreaCategories,
+      dogAreaFilterGroups: normalizeDogAreaFilterGroups(dogAreaCategories),
       hours: sanitizeText(row[structuredColumns.hours]),
       closedDays: sanitizeText(row[structuredColumns.closedDays]),
       parking: sanitizeText(row[structuredColumns.parking]),

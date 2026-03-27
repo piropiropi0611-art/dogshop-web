@@ -293,7 +293,6 @@ async function extractVisibleAddress(page, url) {
 
 function buildRecords(rows) {
   const [header, ...dataRows] = rows;
-  const headerMap = new Map(header.map((name, index) => [name, index]));
 
   return dataRows
     .map((row) => {

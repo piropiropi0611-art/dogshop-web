@@ -26,9 +26,14 @@ export function ShopCard({ shop, isActive = false, onSelect }: ShopCardProps) {
         <span className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold text-zinc-700">
           {shop.city}
         </span>
-        <span className="rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700">
-          {shop.dogAreaCategory}
-        </span>
+        {shop.dogAreaCategories.map((category) => (
+          <span
+            key={category}
+            className="rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold text-amber-700"
+          >
+            {category}
+          </span>
+        ))}
         <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
           {shop.visitStatus}
         </span>
@@ -44,6 +49,12 @@ export function ShopCard({ shop, isActive = false, onSelect }: ShopCardProps) {
           <dt className="font-medium text-zinc-900">営業時間</dt>
           <dd>{shop.hours}</dd>
         </div>
+        {shop.closedDays ? (
+          <div>
+            <dt className="font-medium text-zinc-900">定休日</dt>
+            <dd>{shop.closedDays}</dd>
+          </div>
+        ) : null}
         <div>
           <dt className="font-medium text-zinc-900">同伴エリア</dt>
           <dd>{shop.dogArea}</dd>
