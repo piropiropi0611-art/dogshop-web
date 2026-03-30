@@ -80,9 +80,9 @@ export async function buildImportPreview(options = {}) {
   ]);
 
   const structuredColumns = config.columns.structured;
-  const previewPrefix = config.prefixes.previewId;
-  const previewSlugPrefix = config.prefixes.previewSlug ?? previewPrefix;
-  const previewPadding = config.padding?.preview ?? 3;
+  const previewPrefix = "import";
+  const previewSlugPrefix = "import";
+  const previewPadding = config.padding.preview;
 
   const structuredRows = rowsToObjects(parseCsv(structuredCsv));
   const currentShops = JSON.parse(currentShopsRaw);

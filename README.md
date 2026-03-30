@@ -83,7 +83,12 @@ npm run vercel:deploy:prod:direct
 主なファイル:
 
 - `datasets/<datasetId>/dataset.json`
-  - dataset 設定
+  - dataset 固有設定
+  - その dataset だけが持つ追加設定を書く
+  - dataset 固有設定がなければファイル自体を置かなくても構いません
+- `datasets/_shared.json`
+  - dataset 共通設定
+  - 複数 dataset で共通利用する取り込みルールを書く
 - `datasets/<datasetId>/structured.csv`
   - 取り込み用の整形済み CSV
 - `datasets/<datasetId>/preview.json`
@@ -100,15 +105,23 @@ npm run vercel:deploy:prod:direct
 
 例:
 
-- `datasets/fuchu/dataset.json`
-- `datasets/fuchu/structured.csv`
-- `datasets/fuchu/preview.json`
+- `datasets/<datasetId>/dataset.json`
+- `datasets/_shared.json`
+- `datasets/<datasetId>/structured.csv`
+- `datasets/<datasetId>/preview.json`
 
 `dataset` 運用ルール:
 
 - 1つの地域取り込み単位を `dataset` として扱います
 - `structured.csv` は Web 取り込み前の整形済み入力です
-- CSV の列名は `datasets/<datasetId>/dataset.json` の `columns` に合わせます
+- `datasets/<datasetId>/dataset.json` には、その地域固有の設定だけを書きます
+- `datasets/_shared.json` には、地域によらず共通で使う取り込み設定を書きます
+- 実行時は `datasets/_shared.json` を先に読み込み、その上に `datasets/<datasetId>/dataset.json` を重ねて使います
+- `datasets/<datasetId>/dataset.json` が無い場合は空設定 `{}` として扱います
+- `datasetId` は `dataset.json` ではなくディレクトリ名から決まります
+- `publicSlug` の接頭辞もディレクトリ名から自動決定します
+- `preview.json` の仮 `id` / 仮 `slug` の接頭辞は固定で `import` を使います
+- `paths` は現在 `datasets/_shared.json` に集約しています
 - 現在の主要なブーリアン列は `is_visited` / `is_hidden` です
 - 新しい地域を追加するときは既存の `datasets/<datasetId>/` をコピーして使います
 - 公開データの更新は `structured -> preview -> merge` の流れを前提にします
@@ -236,7 +249,7 @@ npm run build
 
 ```json
 {
-  "slug": "fuchu-01",
+  "slug": "<datasetId>-01",
   "isHidden": true
 }
 ```

@@ -1,6 +1,6 @@
 [
   {
-    "id": "fuchu-import-001",
+    "id": "import-001",
     "slug": "fuchu-19",
     "isHidden": false,
     "name": "山田屋",
@@ -33,7 +33,7 @@
     "sourceCsvMemo": "店内は条件付きでワンコ🆗。\nおとなしく出来て他客が問題なければ店内利用可能。\n東京競馬場G1開催日、または暖期の他会場G1開催日は外席が設置され山田屋だけでなく他の隣店もワンコ🆗。"
   },
   {
-    "id": "fuchu-import-002",
+    "id": "import-002",
     "slug": "fuchu-20",
     "isHidden": false,
     "name": "SOIGIN COFFEE hasami",
@@ -64,7 +64,7 @@
     "sourceCsvMemo": "外席ベンチあり"
   },
   {
-    "id": "fuchu-import-003",
+    "id": "import-003",
     "slug": "fuchu-01",
     "isHidden": false,
     "name": "医食屋nobu 発酵野菜・自然食",
@@ -97,7 +97,7 @@
     "sourceCsvMemo": "店内ワンコ🆗です。カフェマット必須。"
   },
   {
-    "id": "fuchu-import-004",
+    "id": "import-004",
     "slug": "fuchu-21",
     "isHidden": false,
     "name": "Cafe開",
@@ -128,7 +128,7 @@
     "sourceCsvMemo": "テラス席とサンルームがワンコ🆗らしいです。\nテラス席は屋根付き風防あり。"
   },
   {
-    "id": "fuchu-import-005",
+    "id": "import-005",
     "slug": "fuchu-22",
     "isHidden": false,
     "name": "THREE ARROWS BREWING（スリーアローズブルーイング）",
@@ -163,7 +163,7 @@
     "sourceCsvMemo": "店内立ち飲み。店内と外のテラス席がワンコ🆗"
   },
   {
-    "id": "fuchu-import-006",
+    "id": "import-006",
     "slug": "fuchu-23",
     "isHidden": false,
     "name": "脇町珈琲",
@@ -194,7 +194,7 @@
     "sourceCsvMemo": "空いていれば外席ベンチでワンコ🆗らしいです"
   },
   {
-    "id": "fuchu-import-007",
+    "id": "import-007",
     "slug": "fuchu-02",
     "isHidden": false,
     "name": "スターバックス コーヒー 府中西府店",
@@ -225,7 +225,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗です"
   },
   {
-    "id": "fuchu-import-008",
+    "id": "import-008",
     "slug": "fuchu-24",
     "isHidden": false,
     "name": "café コットン畑",
@@ -256,7 +256,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗\n就労継続支援B型事業所。ホールスタッフは就労トレーニングが目的の接客なのでご承知おきください。"
   },
   {
-    "id": "fuchu-import-009",
+    "id": "import-009",
     "slug": "fuchu-25",
     "isHidden": false,
     "name": "京都ラーメンよこ川 府中店",
@@ -289,7 +289,7 @@
     "sourceCsvMemo": "外席があってワンコと一緒食べられます\nとなりの呑み屋のもつしげさんの外席も利用出来ます(系列店)"
   },
   {
-    "id": "fuchu-import-010",
+    "id": "import-010",
     "slug": "fuchu-03",
     "isHidden": false,
     "name": "もつしげ 府中店",
@@ -320,7 +320,7 @@
     "sourceCsvMemo": "暖季は外席が出てワンコ🆗です"
   },
   {
-    "id": "fuchu-import-011",
+    "id": "import-011",
     "slug": "fuchu-04",
     "isHidden": false,
     "name": "メディバル × タニタカフェ 東府中",
@@ -353,7 +353,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗です。屋根ありヒーターあり。\nモバイルオーダー。\nワンコ同伴はルールがいろいろ決められてるので要確認。\n床下かカートのみ🆗、イス上と飼い主膝上は🆖。"
   },
   {
-    "id": "fuchu-import-012",
+    "id": "import-012",
     "slug": "fuchu-26",
     "isHidden": false,
     "name": "Café Brico（カフェブリコ）",
@@ -386,7 +386,7 @@
     "sourceCsvMemo": "インナーテラス席がワンコ🆗です。\n屋根付き、ヒーターあり。"
   },
   {
-    "id": "fuchu-import-013",
+    "id": "import-013",
     "slug": "fuchu-27",
     "isHidden": false,
     "name": "an official（アン オフィシャル）",
@@ -419,7 +419,7 @@
     "sourceCsvMemo": "外席ワンコ🆗、購入した生洋菓子・焼き菓子等のイートインやドリンクメニューあり"
   },
   {
-    "id": "fuchu-import-014",
+    "id": "import-014",
     "slug": "fuchu-28",
     "isHidden": false,
     "name": "農食（NOUSHOKU）レストラン＆ショップ",
@@ -450,7 +450,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗です"
   },
   {
-    "id": "fuchu-import-015",
+    "id": "import-015",
     "slug": "fuchu-29",
     "isHidden": false,
     "name": "café そらいろ",
@@ -481,7 +481,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗です。屋根ありで日除け雨除けあり"
   },
   {
-    "id": "fuchu-import-016",
+    "id": "import-016",
     "slug": "fuchu-30",
     "isHidden": true,
     "name": "Ｄ‐ｋｉｔｃｈｅｎ＆鍼灸BODYCARE(表記未特定)",
@@ -512,7 +512,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗です。\n木曜日の昼のみ営業中。"
   },
   {
-    "id": "fuchu-import-017",
+    "id": "import-017",
     "slug": "fuchu-17",
     "isHidden": false,
     "name": "CAFE de CRIE ケヤキゲート府中店",
@@ -543,7 +543,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗、商業施設内のため屋根があり、日除け雨除けは問題なし。"
   },
   {
-    "id": "fuchu-import-018",
+    "id": "import-018",
     "slug": "fuchu-31",
     "isHidden": false,
     "name": "Caffe＆Bar Aeroporto（アエロポルト）",
@@ -577,7 +577,7 @@
     "sourceCsvMemo": "店内ワンコ🆗、店主が動物アレルギーになってしまったため、毛が抜けない犬種＆店内でおとなしく出来るのが条件。"
   },
   {
-    "id": "fuchu-import-019",
+    "id": "import-019",
     "slug": "fuchu-05",
     "isHidden": false,
     "name": "COCOROTUS 府中乃森珈琲店",
@@ -608,7 +608,7 @@
     "sourceCsvMemo": "都立府中の森公園内のカフェ。テラス席ワンコ🆗、日除けパラソルあり。雨除け・風除けなし。"
   },
   {
-    "id": "fuchu-import-020",
+    "id": "import-020",
     "slug": "fuchu-32",
     "isHidden": false,
     "name": "モナムール清風堂本店",
@@ -641,7 +641,7 @@
     "sourceCsvMemo": "1Fカフェフロアにテラス席ありワンコ🆗。\n2Fのレストランメニュー提供も相談出来る模様。"
   },
   {
-    "id": "fuchu-import-021",
+    "id": "import-021",
     "slug": "fuchu-33",
     "isHidden": false,
     "name": "Bake shop PoTa（ベイクショップポタ）",
@@ -672,7 +672,7 @@
     "sourceCsvMemo": "外席にベンチとテーブルありでワンコ🆗。\nテイクアウトメニューのみで、スイーツ系はテイクアウトのみでイートインは無理そう。"
   },
   {
-    "id": "fuchu-import-022",
+    "id": "import-022",
     "slug": "fuchu-06",
     "isHidden": false,
     "name": "ことみ食堂",
@@ -703,7 +703,7 @@
     "sourceCsvMemo": "府中市の観光物産館に併設、施設の共用休憩場所としてテラス席がありワンコも🆗。テラス席は共用なので、持ち込み、施設自販機の利用、休日に数台来るキッチンカー商品の飲食も可能"
   },
   {
-    "id": "fuchu-import-023",
+    "id": "import-023",
     "slug": "fuchu-34",
     "isHidden": false,
     "name": "KITCHEN ＆ CAFE-BAR SHINKER",
@@ -734,7 +734,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗\nマンション北側に面しており陽が全く入らないため、夏は涼しく冬は寒い。簡易の雨除けのみ、風除けなし"
   },
   {
-    "id": "fuchu-import-024",
+    "id": "import-024",
     "slug": "fuchu-35",
     "isHidden": false,
     "name": "coffee and bake douceur",
@@ -765,7 +765,7 @@
     "sourceCsvMemo": "店内ワンコ🆗、人気店で入店待ちで長時間並ぶ場合あり。予約不可。時間に余裕のあるときの利用を推奨。混雑すると店外待ちもあるので夏場にワンコ連れていくのは注意。"
   },
   {
-    "id": "fuchu-import-025",
+    "id": "import-025",
     "slug": "fuchu-07",
     "isHidden": false,
     "name": "BASE S CAFE & DINER FUCHU TERRACE (府中テラス)",
@@ -796,7 +796,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗、日除け・風除けあり、日除けがあるので多少の雨なら影響なし。冷房器具および暖房器具の有無は不明。"
   },
   {
-    "id": "fuchu-import-026",
+    "id": "import-026",
     "slug": "fuchu-36",
     "isHidden": false,
     "name": "だがや",
@@ -829,7 +829,7 @@
     "sourceCsvMemo": "暖季に外席を出すときがありワンコ🆗です。\n日除け・雨除け・風除けいずれもなし。"
   },
   {
-    "id": "fuchu-import-027",
+    "id": "import-027",
     "slug": "fuchu-08",
     "isHidden": false,
     "name": "KIZUNA DINING & WANTOK CAFE 府中くるる店",
@@ -860,7 +860,7 @@
     "sourceCsvMemo": "外席ワンコ🆗です"
   },
   {
-    "id": "fuchu-import-028",
+    "id": "import-028",
     "slug": "fuchu-37",
     "isHidden": false,
     "name": "CAFE WHANAU（CAFE WHĀNAU）",
@@ -891,7 +891,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗です"
   },
   {
-    "id": "fuchu-import-029",
+    "id": "import-029",
     "slug": "fuchu-09",
     "isHidden": false,
     "name": "珈琲鳴館 府中宮町店",
@@ -922,7 +922,7 @@
     "sourceCsvMemo": "暖かい季節のみテラス席ありワンコ🆗、雨除け日除けなし。"
   },
   {
-    "id": "fuchu-import-030",
+    "id": "import-030",
     "slug": "fuchu-38",
     "isHidden": false,
     "name": "鈴木屋商店",
@@ -953,7 +953,7 @@
     "sourceCsvMemo": "ワンコのフードやオヤツ売ってます"
   },
   {
-    "id": "fuchu-import-031",
+    "id": "import-031",
     "slug": "fuchu-10",
     "isHidden": false,
     "name": "モンマスティー 東府中店",
@@ -984,7 +984,7 @@
     "sourceCsvMemo": "外席ベンチがあります"
   },
   {
-    "id": "fuchu-import-032",
+    "id": "import-032",
     "slug": "fuchu-39",
     "isHidden": false,
     "name": "京風たこ焼き紅葉",
@@ -1015,7 +1015,7 @@
     "sourceCsvMemo": "西武多摩川線・多磨駅ロータリー傍のたこ焼き屋、イートイン用のベンチスぺースあり。"
   },
   {
-    "id": "fuchu-import-033",
+    "id": "import-033",
     "slug": "fuchu-40",
     "isHidden": true,
     "name": "越中屋酒店",
@@ -1048,7 +1048,7 @@
     "sourceCsvMemo": "喫煙席を兼ねた店頭ベンチ席ワンコ🆗、日除け・雨除け・風除けいずれもなし。角打ちに近い形態。つまみは店内の市販商品を購入。"
   },
   {
-    "id": "fuchu-import-034",
+    "id": "import-034",
     "slug": "fuchu-41",
     "isHidden": false,
     "name": "茶房山もも",
@@ -1079,7 +1079,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗、ガーデン風で雰囲気良し。"
   },
   {
-    "id": "fuchu-import-035",
+    "id": "import-035",
     "slug": "fuchu-42",
     "isHidden": false,
     "name": "サロン・ド・カモシタ",
@@ -1112,7 +1112,7 @@
     "sourceCsvMemo": "店内ワンコ🆗。\n他の利用客から利用同意が得られるのが条件。"
   },
   {
-    "id": "fuchu-import-036",
+    "id": "import-036",
     "slug": "fuchu-11",
     "isHidden": false,
     "name": "ロイヤルホスト 府中東店",
@@ -1143,7 +1143,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗、日除けあり。"
   },
   {
-    "id": "fuchu-import-037",
+    "id": "import-037",
     "slug": "fuchu-43",
     "isHidden": false,
     "name": "cafe bond",
@@ -1174,7 +1174,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗、店頭の１卓のみ、屋根あり。"
   },
   {
-    "id": "fuchu-import-038",
+    "id": "import-038",
     "slug": "fuchu-44",
     "isHidden": false,
     "name": "MR.coffeestand/hamburger",
@@ -1207,7 +1207,7 @@
     "sourceCsvMemo": "美容室の敷地内の常設キッチンカー、美容室内にカフェスペースがあり混雑していなければ、ワンコ🆗でイートイン利用可"
   },
   {
-    "id": "fuchu-import-039",
+    "id": "import-039",
     "slug": "fuchu-45",
     "isHidden": false,
     "name": "リブラ カフェ ルイ",
@@ -1238,7 +1238,7 @@
     "sourceCsvMemo": "店内ワンコ🆗"
   },
   {
-    "id": "fuchu-import-040",
+    "id": "import-040",
     "slug": "fuchu-46",
     "isHidden": false,
     "name": "シェ アンディ ラボ（chez andy labo）",
@@ -1271,7 +1271,7 @@
     "sourceCsvMemo": "かき氷が有名。ドリンクなども頂ける。店頭ベンチのみワンコ🆗。テイクアウト＆ベンチ用のかき氷メニューあり。"
   },
   {
-    "id": "fuchu-import-041",
+    "id": "import-041",
     "slug": "fuchu-12",
     "isHidden": false,
     "name": "モスバーガー 東府中店",
@@ -1302,7 +1302,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗、屋根あり"
   },
   {
-    "id": "fuchu-import-042",
+    "id": "import-042",
     "slug": "fuchu-47",
     "isHidden": false,
     "name": "蕎藤（手打ちそば）",
@@ -1337,7 +1337,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗、仕切りや屋根があるため、日除け・雨除け・風除けいずれもある程度は問題なし。"
   },
   {
-    "id": "fuchu-import-043",
+    "id": "import-043",
     "slug": "fuchu-13",
     "isHidden": false,
     "name": "ワインテラス ユーメ（Wine Terrace Yu-me）",
@@ -1368,7 +1368,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗、日除け・雨除けあり。風除けなし。"
   },
   {
-    "id": "fuchu-import-044",
+    "id": "import-044",
     "slug": "fuchu-48",
     "isHidden": false,
     "name": "428cafe+",
@@ -1399,7 +1399,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗です、日よけのパラソルのみ"
   },
   {
-    "id": "fuchu-import-045",
+    "id": "import-045",
     "slug": "fuchu-49",
     "isHidden": false,
     "name": "cafe dining giraffe",
@@ -1434,7 +1434,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗です、日除け雨除けあり"
   },
   {
-    "id": "fuchu-import-046",
+    "id": "import-046",
     "slug": "fuchu-50",
     "isHidden": false,
     "name": "お食事処ちゃちゃ 府中店",
@@ -1469,7 +1469,7 @@
     "sourceCsvMemo": "店頭テラス席ワンコ🆗、日除け・雨除け・風除けいずれもなし。冬はヒーターが出る。定食がとてもおいしい。"
   },
   {
-    "id": "fuchu-import-047",
+    "id": "import-047",
     "slug": "fuchu-51",
     "isHidden": false,
     "name": "タリーズコーヒー MINANO分倍河原店",
@@ -1500,7 +1500,7 @@
     "sourceCsvMemo": "外席ワンコ🆗、商業施設1Fで屋根あり"
   },
   {
-    "id": "fuchu-import-048",
+    "id": "import-048",
     "slug": "fuchu-14",
     "isHidden": false,
     "name": "府中餃子バルあわ屋",
@@ -1531,7 +1531,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗、屋根あり、風除けあり、スポットクーラーあり、業務用のスポットヒーターあり(真冬でもとても暖かい)"
   },
   {
-    "id": "fuchu-import-049",
+    "id": "import-049",
     "slug": "fuchu-52",
     "isHidden": true,
     "name": "wineshop.il.savino",
@@ -1562,7 +1562,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗です、周囲が建物に囲まれてて、日が傾く時間は日かげになる、雨除け風除けなし"
   },
   {
-    "id": "fuchu-import-050",
+    "id": "import-050",
     "slug": "fuchu-15",
     "isHidden": false,
     "name": "マクドナルド 四谷橋通り府中店",
@@ -1593,7 +1593,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗です"
   },
   {
-    "id": "fuchu-import-051",
+    "id": "import-051",
     "slug": "fuchu-16",
     "isHidden": false,
     "name": "スターバックス コーヒー 府中くるる店",
@@ -1624,7 +1624,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗、日除け・雨除け・風除けいずれもなし"
   },
   {
-    "id": "fuchu-import-052",
+    "id": "import-052",
     "slug": "fuchu-53",
     "isHidden": false,
     "name": "はーもにぃ御休み処",
@@ -1655,7 +1655,7 @@
     "sourceCsvMemo": "店頭のベンチ席ワンコ🆗、神社内にあり雰囲気がある穴場。植樹が多く日除けは問題なし。\n雨除け・風除けはなし。"
   },
   {
-    "id": "fuchu-import-053",
+    "id": "import-053",
     "slug": "fuchu-54",
     "isHidden": false,
     "name": "菩提樹",
@@ -1686,7 +1686,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗、日除け・雨除け・風除けいずれもなし。"
   },
   {
-    "id": "fuchu-import-054",
+    "id": "import-054",
     "slug": "fuchu-55",
     "isHidden": false,
     "name": "バイキングレストラン東北牧場",
@@ -1719,7 +1719,7 @@
     "sourceCsvMemo": "ホテル1Fのレストラン、テラス席ワンコ🆗、屋根ありだが、冷暖房器具はなし、冬は寒い、BBQや鍋プランなどいろんな企画がある。"
   },
   {
-    "id": "fuchu-import-055",
+    "id": "import-055",
     "slug": "fuchu-56",
     "isHidden": false,
     "name": "コパデ・カフェ",
@@ -1750,7 +1750,7 @@
     "sourceCsvMemo": "店頭にワンコ連れ向けの休憩ベンチスペースあり。屋根あり。"
   },
   {
-    "id": "fuchu-import-056",
+    "id": "import-056",
     "slug": "fuchu-57",
     "isHidden": false,
     "name": "Dog Arts and Cafe インディハウス",
@@ -1783,7 +1783,7 @@
     "sourceCsvMemo": "ドッグフレンドリー、店内ワンコ🆗、ワンコメニュー豊富、記念日向けケーキなどの依頼も可能。"
   },
   {
-    "id": "fuchu-import-057",
+    "id": "import-057",
     "slug": "fuchu-58",
     "isHidden": false,
     "name": "立ち呑みたぬき",
@@ -1814,7 +1814,7 @@
     "sourceCsvMemo": "外席ワンコ🆗、雨除け・風除けなし。夜のみなので日除けの考慮不要。冬は一部コタツ席にするとの情報あるが未確認。"
   },
   {
-    "id": "fuchu-import-058",
+    "id": "import-058",
     "slug": "fuchu-59",
     "isHidden": true,
     "name": "手造りダイニングバー アラカラバル",
@@ -1845,7 +1845,7 @@
     "sourceCsvMemo": "外席ワンコ🆗、マンション1Fの一部スペースを利用するため雨除け日除けは問題なし。風除け、暖房器具なし。夏場はスポットクーラーあり。"
   },
   {
-    "id": "fuchu-import-059",
+    "id": "import-059",
     "slug": "fuchu-60",
     "isHidden": false,
     "name": "Tokyo Strawberry Cafe（東京いちごカフェ）",
@@ -1876,7 +1876,7 @@
     "sourceCsvMemo": "外席ワンコ🆗。イステーブルがあるのみで、雨除け日除けもなし。"
   },
   {
-    "id": "fuchu-import-060",
+    "id": "import-060",
     "slug": "fuchu-18",
     "isHidden": false,
     "name": "湘南パンケーキ 府中店",
@@ -1907,7 +1907,7 @@
     "sourceCsvMemo": "テラス席ワンコ🆗、駅架線下にあるため、雨除け日除けは問題なし。"
   },
   {
-    "id": "fuchu-import-061",
+    "id": "import-061",
     "slug": "fuchu-61",
     "isHidden": false,
     "name": "博多キッチン もぐもぐ",

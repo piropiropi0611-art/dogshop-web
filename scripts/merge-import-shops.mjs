@@ -66,8 +66,8 @@ export async function mergeImportShops(options = {}) {
   }
 
   const merged = [...currentShops];
-  const publicSlugPrefix = config.prefixes.publicSlug;
-  const publicSlugPadding = config.padding?.publicSlug ?? 2;
+  const publicSlugPrefix = config.datasetId;
+  const publicSlugPadding = config.padding.publicSlug;
   let nextShopId = getMaxNumericSuffix(
     currentShops.map((shop) => shop.id),
     "shop",

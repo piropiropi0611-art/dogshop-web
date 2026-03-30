@@ -7,6 +7,25 @@ const __dirname = path.dirname(__filename);
 
 export const projectRoot = path.resolve(__dirname, "..", "..");
 const datasetsDirectory = path.resolve(projectRoot, "datasets");
+const sharedDatasetConfigPath = path.resolve(datasetsDirectory, "_shared.json");
+
+function isPlainObject(value) {
+  return value !== null && typeof value === "object" && !Array.isArray(value);
+}
+
+function mergeConfig(base, override) {
+  if (!isPlainObject(base) || !isPlainObject(override)) {
+    return override;
+  }
+
+  const merged = { ...base };
+
+  for (const [key, value] of Object.entries(override)) {
+    merged[key] = key in base ? mergeConfig(base[key], value) : value;
+  }
+
+  return merged;
+}
 
 export function resolveProjectPath(relativePath) {
   return path.resolve(projectRoot, relativePath);
@@ -14,15 +33,23 @@ export function resolveProjectPath(relativePath) {
 
 export async function loadDatasetConfig(datasetId) {
   const configPath = path.resolve(datasetsDirectory, datasetId, "dataset.json");
-  const configRaw = await readFile(configPath, "utf8");
-  const config = JSON.parse(configRaw);
+  const [sharedConfigRaw, configRaw] = await Promise.all([
+    readFile(sharedDatasetConfigPath, "utf8"),
+    readFile(configPath, "utf8").catch((error) => {
+      if (error?.code === "ENOENT") {
+        return "{}";
+      }
 
-  if (!config?.datasetId) {
-    throw new Error(`Dataset config is missing datasetId: ${configPath}`);
-  }
+      throw error;
+    }),
+  ]);
+  const sharedConfig = JSON.parse(sharedConfigRaw);
+  const config = mergeConfig(sharedConfig, JSON.parse(configRaw));
+  const derivedDatasetId = path.basename(path.dirname(configPath));
 
   return {
     ...config,
+    datasetId: derivedDatasetId,
     configPath,
     configDirectory: path.dirname(configPath),
   };

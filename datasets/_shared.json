@@ -1,19 +1,8 @@
 {
-  "datasetId": "fuchu",
-  "label": "東京都府中市",
   "paths": {
     "currentShops": "../../src/data/shops.json",
     "previewJson": "preview.json",
     "structuredCsv": "structured.csv"
-  },
-  "prefixes": {
-    "previewId": "fuchu-import",
-    "previewSlug": "fuchu-import",
-    "publicSlug": "fuchu"
-  },
-  "padding": {
-    "preview": 3,
-    "publicSlug": 2
   },
   "columns": {
     "structured": {
@@ -36,5 +25,9 @@
       "extraMemo": "extra_memo",
       "publishedSlug": "published_slug"
     }
+  },
+  "padding": {
+    "preview": 3,
+    "publicSlug": 2
   }
 }
