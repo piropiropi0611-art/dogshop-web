@@ -90,8 +90,10 @@ export async function mergeImportShops(options = {}) {
       currentShop.isHidden = previewShop.isHidden ?? false;
       delete currentShop.isVisible;
       delete currentShop.hidden;
+      currentShop.googleMapsUrl = previewShop.googleMapsUrl ?? null;
       currentShop.officialSiteUrl = previewShop.officialSiteUrl ?? null;
       currentShop.tabelogUrl = previewShop.tabelogUrl ?? null;
+      currentShop.instagramUrl = previewShop.instagramUrl ?? null;
       currentShop.isVisited = previewShop.isVisited ?? false;
       delete currentShop.visitStatus;
       delete currentShop.visited;
