@@ -87,6 +87,8 @@ export async function mergeImportShops(options = {}) {
     );
 
     if (currentShop) {
+      currentShop.officialSiteUrl = previewShop.officialSiteUrl ?? null;
+      currentShop.tabelogUrl = previewShop.tabelogUrl ?? null;
       matchedCount += 1;
       continue;
     }

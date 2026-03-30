@@ -1,5 +1,6 @@
 type ShopLinkIconsProps = {
   googleMapsUrl?: string | null;
+  officialSiteUrl?: string | null;
   tabelogUrl?: string | null;
   instagramUrl?: string | null;
   className?: string;
@@ -11,6 +12,7 @@ function iconClassName(colorClass: string) {
 
 export function ShopLinkIcons({
   googleMapsUrl,
+  officialSiteUrl,
   tabelogUrl,
   instagramUrl,
   className = "",
@@ -28,6 +30,34 @@ export function ShopLinkIcons({
         >
           <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current" aria-hidden="true">
             <path d="M12 2a7 7 0 0 0-7 7c0 5.12 5.54 11.42 6.17 12.11a1.1 1.1 0 0 0 1.66 0C13.46 20.42 19 14.12 19 9a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5Z" />
+          </svg>
+        </a>
+      ) : null}
+
+      {officialSiteUrl ? (
+        <a
+          href={officialSiteUrl}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="公式サイトを開く"
+          title="公式サイトを開く"
+          className={iconClassName("text-blue-700")}
+        >
+          <svg viewBox="0 0 24 24" className="h-4 w-4 stroke-current" aria-hidden="true">
+            <circle
+              cx="12"
+              cy="12"
+              r="8.25"
+              fill="none"
+              strokeWidth="1.8"
+            />
+            <path
+              d="M3.75 12h16.5M12 3.75c2.2 2.4 3.4 5.18 3.4 8.25S14.2 17.85 12 20.25M12 3.75C9.8 6.15 8.6 8.93 8.6 12s1.2 5.85 3.4 8.25"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1.8"
+            />
           </svg>
         </a>
       ) : null}

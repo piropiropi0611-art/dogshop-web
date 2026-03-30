@@ -20,20 +20,21 @@
   },
   "columns": {
     "structured": {
-      "title": "title",
-      "name": "final_name",
-      "address": "final_address",
-      "hours": "final_hours",
-      "closedDays": "final_closed_days",
-      "parking": "final_parking",
-      "dogArea": "final_dog_area",
-      "dogMenu": "final_dog_menu",
-      "rules": "final_rules",
-      "intro": "intro_seed",
-      "memo": "memo_seed",
+      "name": "name",
+      "address": "address",
+      "hours": "hours",
+      "closedDays": "closed_days",
+      "parking": "parking",
+      "dogArea": "dog_area",
+      "dogMenu": "dog_menu",
+      "rules": "rules",
+      "intro": "intro",
+      "memo": "memo",
+      "officialSiteUrl": "official_site_url",
+      "tabelogUrl": "tabelog_url",
       "instagramUrl": "instagram_url",
       "googleMapsUrl": "google_maps_url",
-      "csvMemo": "csv_memo",
+      "extraMemo": "extra_memo",
       "publishedSlug": "published_slug"
     }
   }

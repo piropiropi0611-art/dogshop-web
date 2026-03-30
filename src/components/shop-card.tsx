@@ -83,6 +83,7 @@ export function ShopCard({ shop, isActive = false, onSelect }: ShopCardProps) {
         </Link>
         <ShopLinkIcons
           googleMapsUrl={shop.googleMapsUrl}
+          officialSiteUrl={shop.officialSiteUrl}
           tabelogUrl={shop.tabelogUrl}
           instagramUrl={shop.instagramUrl}
           className="ml-auto"

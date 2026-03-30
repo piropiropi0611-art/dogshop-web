@@ -3,7 +3,6 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   buildKeywordText,
-  buildTabelogUrl,
   canonicalizeDogAreaCategories,
   formatSequence,
   loadDatasetConfig,
@@ -81,7 +80,7 @@ export async function buildImportPreview(options = {}) {
       row[structuredColumns.dogArea] ?? "",
       row[structuredColumns.memo] ?? "",
       row[structuredColumns.rules] ?? "",
-      row[structuredColumns.csvMemo] ?? "",
+      row[structuredColumns.extraMemo] ?? "",
     ]
       .filter(Boolean)
       .join(" ");
@@ -116,19 +115,17 @@ export async function buildImportPreview(options = {}) {
         sanitizeText(row[structuredColumns.googleMapsUrl]) ||
         existingShop?.googleMapsUrl ||
         null,
+      officialSiteUrl:
+        sanitizeText(row[structuredColumns.officialSiteUrl]) || null,
       tabelogUrl:
-        existingShop?.tabelogUrl ??
-        buildTabelogUrl({
-          name: row[structuredColumns.name],
-          city: existingShop?.city || city,
-        }),
+        sanitizeText(row[structuredColumns.tabelogUrl]) || null,
       instagramUrl:
         sanitizeText(row[structuredColumns.instagramUrl]) ||
         existingShop?.instagramUrl ||
         null,
       visitStatus: existingShop?.visitStatus ?? "ピロプー訪店済",
       sourceCsvMemo:
-        sanitizeText(row[structuredColumns.csvMemo] ?? "") || null,
+        sanitizeText(row[structuredColumns.extraMemo] ?? "") || null,
     };
 
     shop.keywordText = buildKeywordText(shop);

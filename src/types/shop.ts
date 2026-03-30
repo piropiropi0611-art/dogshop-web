@@ -35,6 +35,7 @@ export type Shop = {
   rules: string[];
   memo: string | null;
   googleMapsUrl: string | null;
+  officialSiteUrl: string | null;
   tabelogUrl: string | null;
   instagramUrl: string | null;
   visitStatus: VisitStatus;

@@ -95,6 +95,7 @@ export default async function ShopPage({ params }: ShopPageProps) {
                   <p>{shop.address}</p>
                   <ShopLinkIcons
                     googleMapsUrl={shop.googleMapsUrl}
+                    officialSiteUrl={shop.officialSiteUrl}
                     tabelogUrl={shop.tabelogUrl}
                     instagramUrl={shop.instagramUrl}
                   />

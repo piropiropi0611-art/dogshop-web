@@ -260,11 +260,6 @@ export function normalizeDogAreaFilterGroup(dogAreaCategory) {
   return normalizeDogAreaFilterGroups([dogAreaCategory])[0];
 }
 
-export function buildTabelogUrl({ name, city }) {
-  const query = `${name} ${city}`.trim();
-  return `https://tabelog.com/rstLst/?sk=${encodeURIComponent(query)}`;
-}
-
 export function parseParkingSpaces(parking) {
   const match = String(parking).match(/(\d+)台/u);
   return match ? Number(match[1]) : null;
