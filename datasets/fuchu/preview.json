@@ -2066,5 +2066,39 @@
     "instagramUrl": "https://www.instagram.com/shonan.pancake/",
     "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗、駅架線下にあるため、雨除け日除けは問題なし。"
+  },
+  {
+    "id": "fuchu-import-060",
+    "slug": "fuchu-import-060",
+    "isVisible": true,
+    "name": "博多キッチン もぐもぐ",
+    "prefecture": "東京都",
+    "city": "府中市",
+    "address": "東京都府中市本町2-20-11",
+    "lat": 35.666134,
+    "lng": 139.475845,
+    "geocodeSource": "東京都府中市本町2-20-11",
+    "geocodeStatus": "ok",
+    "intro": "炊き餃子やもつ鍋など博多料理を楽しめる居酒屋。\n駅近で立ち寄りやすく、友人同士や家族でゆっくり食事ができます。",
+    "keywordText": "博多キッチン もぐもぐ 東京都 府中市 東京都府中市本町2-20-11 ピロプー訪店済 炊き餃子やもつ鍋など博多料理を楽しめる居酒屋。\n駅近で立ち寄りやすく、友人同士や家族でゆっくり食事ができます。 外席ペットOKです。 外席ペットOKです。 外席・ベンチ席",
+    "dogArea": "外席・ベンチ席",
+    "dogAreaCategories": [
+      "外席OK"
+    ],
+    "dogAreaFilterGroups": [
+      "テラス・外席"
+    ],
+    "hours": "月〜金 11:00〜15:00 / 17:00〜23:00 / 土 16:00〜23:00 / 日祝 16:00〜22:00",
+    "closedDays": "不定休日あり",
+    "parking": "なし（近隣コインパーキング利用）",
+    "parkingSpaces": null,
+    "dogMenu": "なし",
+    "rules": [],
+    "memo": "外席ペットOKです。",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%8D%9A%E5%A4%9A%E3%82%AD%E3%83%83%E3%83%81%E3%83%B3+%E3%82%82%E3%81%90%E3%82%82%E3%81%90+%E5%BA%9C%E4%B8%AD",
+    "tabelogUrl": "https://tabelog.com/rstLst/?sk=%E5%8D%9A%E5%A4%9A%E3%82%AD%E3%83%83%E3%83%81%E3%83%B3%20%E3%82%82%E3%81%90%E3%82%82%E3%81%90%20%E5%BA%9C%E4%B8%AD%E5%B8%82",
+    "instagramUrl": "https://www.instagram.com/mono2_mogu2/",
+    "visitStatus": "ピロプー訪店済",
+    "sourceCsvMemo": "外席ペットOKです。"
   }
 ]

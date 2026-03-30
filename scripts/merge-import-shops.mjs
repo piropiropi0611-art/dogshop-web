@@ -87,6 +87,18 @@ export async function mergeImportShops(options = {}) {
 
     if (currentShop) {
       matchedCount += 1;
+      const mergedShop = {
+        ...currentShop,
+        ...previewShop,
+        id: currentShop.id,
+        slug: currentShop.slug,
+        isVisible: currentShop.isVisible ?? previewShop.isVisible ?? true,
+      };
+      mergedShop.keywordText = buildKeywordText(mergedShop);
+      const index = merged.findIndex((shop) => shop.id === currentShop.id);
+      if (index >= 0) {
+        merged[index] = mergedShop;
+      }
       continue;
     }
 
