@@ -86,33 +86,35 @@ npm run vercel:deploy:prod:direct
   - dataset 設定
 - `datasets/<datasetId>/structured.csv`
   - 取り込み用の整形済み CSV
-- `datasets/<datasetId>/research.csv`
-  - 調査用 CSV
 - `datasets/<datasetId>/preview.json`
   - 中間生成 JSON
+  - 座標や geocode 状態は持たず、CSV 内容の確認用として使う
 
 主なスクリプト:
 
 - `scripts/build-import-preview.mjs`
-  - `structured.csv` と `research.csv` から `preview.json` を生成
+  - `structured.csv` から `preview.json` を生成
 - `scripts/merge-import-shops.mjs`
   - `preview.json` を `src/data/shops.json` に反映
+  - 新規店追加時のみ geocode を行い、`shops.json` に座標を補完
 
 例:
 
 - `datasets/fuchu/dataset.json`
 - `datasets/fuchu/structured.csv`
-- `datasets/fuchu/research.csv`
 - `datasets/fuchu/preview.json`
 
 `dataset` 運用ルール:
 
 - 1つの地域取り込み単位を `dataset` として扱います
 - `structured.csv` は Web 取り込み前の整形済み入力です
-- `research.csv` は調査・比較用の補助入力です
 - CSV の列名は `datasets/<datasetId>/dataset.json` の `columns` に合わせます
 - 新しい地域を追加するときは既存の `datasets/<datasetId>/` をコピーして使います
-- 公開データの更新は `structured -> research -> preview -> merge` の流れを前提にします
+- 公開データの更新は `structured -> preview -> merge` の流れを前提にします
+- `dogAreaCategories` / `dogAreaFilterGroups` は `structured.csv` の内容から毎回導出します
+- そのため、既存店のカテゴリ修正は `shops.json` ではなく CSV 側を更新して反映します
+- 既存店の座標と geocode 状態は `src/data/shops.json` を正本として扱います
+- `preview.json` は座標確認用ではなく、CSV 由来の表示項目確認用です
 
 更新フロー:
 
@@ -121,7 +123,6 @@ npm run vercel:deploy:prod:direct
 ```bash
 cd "/home/ubuntu/etc/dogshop/dogshop-web"
 # datasets/<datasetId>/structured.csv
-# datasets/<datasetId>/research.csv
 ```
 
 2. プレビュー JSON を生成する
@@ -134,7 +135,9 @@ npm run build:data:preview -- --dataset=<datasetId>
 3. 生成結果を確認する
 
 - `datasets/<datasetId>/preview.json`
-- 必要に応じて `structured.csv` / `research.csv` を修正して再生成
+- 座標は含まれないため、店名・住所・営業時間・紹介文・メモなどを確認
+- `dogAreaCategories` / `dogAreaFilterGroups` もこの段階で CSV 由来の生成結果として確認
+- 必要に応じて `structured.csv` を修正して再生成
 
 4. 現行公開データへ反映する
 
@@ -146,6 +149,9 @@ npm run build:data:merge -- --dataset=<datasetId>
 5. 反映後の公開データを確認する
 
 - `src/data/shops.json`
+- 新規店はこの段階で座標・`geocodeSource`・`geocodeStatus` が補完されます
+- 必要に応じて `shops.json` の座標を手修正し、その値を正本として保持します
+- 既存店の `dogAreaCategories` / `dogAreaFilterGroups` は `shops.json` を直接直さず、CSV を修正して再生成します
 
 6. アプリ全体として検証する
 

@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import {
   buildKeywordText,
   formatSequence,
+  geocodeAddress,
   getMaxNumericSuffix,
   loadDatasetConfig,
   normalizeMatchKey,
@@ -87,26 +88,19 @@ export async function mergeImportShops(options = {}) {
 
     if (currentShop) {
       matchedCount += 1;
-      const mergedShop = {
-        ...currentShop,
-        ...previewShop,
-        id: currentShop.id,
-        slug: currentShop.slug,
-        isVisible: currentShop.isVisible ?? previewShop.isVisible ?? true,
-      };
-      mergedShop.keywordText = buildKeywordText(mergedShop);
-      const index = merged.findIndex((shop) => shop.id === currentShop.id);
-      if (index >= 0) {
-        merged[index] = mergedShop;
-      }
       continue;
     }
 
+    const geocoded = await geocodeAddress(previewShop.address);
     const newShop = {
       ...previewShop,
       id: formatSequence("shop", nextShopId, 2),
       slug: formatSequence(publicSlugPrefix, nextPublicSlug, publicSlugPadding),
       isVisible: previewShop.isVisible ?? true,
+      lat: geocoded.lat,
+      lng: geocoded.lng,
+      geocodeSource: geocoded.geocodeSource,
+      geocodeStatus: geocoded.geocodeStatus,
     };
     newShop.keywordText = buildKeywordText(newShop);
     merged.push(newShop);

@@ -6,11 +6,9 @@ import {
   buildTabelogUrl,
   canonicalizeDogAreaCategories,
   formatSequence,
-  geocodeAddress,
   loadDatasetConfig,
   normalizeDogAreaCategories,
   normalizeDogAreaFilterGroups,
-  normalizeMatchKey,
   parseArgs,
   parseCsv,
   parseLocation,
@@ -36,9 +34,6 @@ function resolveDatasetPaths(config, overrides) {
     structuredCsv: overrides.structured
       ? resolveProjectPath(overrides.structured)
       : resolveDatasetPath(config, config.paths.structuredCsv),
-    researchCsv: overrides.research
-      ? resolveProjectPath(overrides.research)
-      : resolveDatasetPath(config, config.paths.researchCsv),
   };
 }
 
@@ -52,14 +47,12 @@ export async function buildImportPreview(options = {}) {
 
   const config = await loadDatasetConfig(datasetId);
   const paths = resolveDatasetPaths(config, args);
-  const [structuredCsv, researchCsv, currentShopsRaw] = await Promise.all([
+  const [structuredCsv, currentShopsRaw] = await Promise.all([
     readFile(paths.structuredCsv, "utf8"),
-    readFile(paths.researchCsv, "utf8"),
     readFile(paths.currentShops, "utf8"),
   ]);
 
   const structuredColumns = config.columns.structured;
-  const researchColumns = config.columns.research;
   const excludeText = config.filters?.excludeWhenHoursContains ?? "";
   const previewPrefix = config.prefixes.previewId;
   const previewSlugPrefix = config.prefixes.previewSlug ?? previewPrefix;
@@ -72,41 +65,30 @@ export async function buildImportPreview(options = {}) {
 
     return !String(row[structuredColumns.hours] ?? "").includes(excludeText);
   });
-  const researchRows = rowsToObjects(parseCsv(researchCsv));
-  const researchByTitle = new Map(
-    researchRows.map((row) => [
-      normalizeMatchKey(row[researchColumns.title]),
-      row,
-    ]),
-  );
   const currentShops = JSON.parse(currentShopsRaw);
   const currentBySlug = new Map(currentShops.map((shop) => [shop.slug, shop]));
 
   const shops = [];
 
   for (const [index, row] of structuredRows.entries()) {
-    const titleKey = normalizeMatchKey(row[structuredColumns.title]);
-    const research = researchByTitle.get(titleKey) ?? null;
     const publishedSlug = row[structuredColumns.publishedSlug];
     const existingShop = publishedSlug
       ? currentBySlug.get(publishedSlug) ?? null
       : null;
     const rawAddress = row[structuredColumns.address];
     const { prefecture, city } = parseLocation(rawAddress);
-    const geocoded = await geocodeAddress(rawAddress, existingShop);
     const dogAreaContext = [
       row[structuredColumns.dogArea] ?? "",
-      research?.[researchColumns.csvMemo] ?? "",
-      existingShop?.sourceCsvMemo ?? "",
-      existingShop?.memo ?? "",
+      row[structuredColumns.memo] ?? "",
+      row[structuredColumns.rules] ?? "",
+      row[structuredColumns.csvMemo] ?? "",
     ]
       .filter(Boolean)
       .join(" ");
     const dogAreaCategories = Array.from(
-      new Set(canonicalizeDogAreaCategories([
-        ...(existingShop?.dogAreaCategory ? [existingShop.dogAreaCategory] : []),
-        ...normalizeDogAreaCategories(dogAreaContext),
-      ])),
+      new Set(canonicalizeDogAreaCategories(
+        normalizeDogAreaCategories(dogAreaContext),
+      )),
     );
     const shop = {
       id: formatSequence(previewPrefix, index + 1, previewPadding),
@@ -118,10 +100,6 @@ export async function buildImportPreview(options = {}) {
       prefecture: existingShop?.prefecture || prefecture,
       city: existingShop?.city || city,
       address: stripPostalCode(rawAddress),
-      lat: geocoded.lat,
-      lng: geocoded.lng,
-      geocodeSource: geocoded.geocodeSource,
-      geocodeStatus: geocoded.geocodeStatus,
       intro: sanitizeText(row[structuredColumns.intro]).replace(/。 /g, "。\n"),
       keywordText: "",
       dogArea: sanitizeDogArea(row[structuredColumns.dogArea]),
@@ -135,8 +113,8 @@ export async function buildImportPreview(options = {}) {
       rules: splitRules(row[structuredColumns.rules]),
       memo: sanitizeText(row[structuredColumns.memo]) || null,
       googleMapsUrl:
-        research?.[researchColumns.googleMapsUrl] ??
-        existingShop?.googleMapsUrl ??
+        sanitizeText(row[structuredColumns.googleMapsUrl]) ||
+        existingShop?.googleMapsUrl ||
         null,
       tabelogUrl:
         existingShop?.tabelogUrl ??
@@ -150,7 +128,7 @@ export async function buildImportPreview(options = {}) {
         null,
       visitStatus: existingShop?.visitStatus ?? "ピロプー訪店済",
       sourceCsvMemo:
-        sanitizeText(research?.[researchColumns.csvMemo] ?? "") || null,
+        sanitizeText(row[structuredColumns.csvMemo] ?? "") || null,
     };
 
     shop.keywordText = buildKeywordText(shop);

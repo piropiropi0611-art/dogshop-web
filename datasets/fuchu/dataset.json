@@ -4,8 +4,7 @@
   "paths": {
     "currentShops": "../../src/data/shops.json",
     "previewJson": "preview.json",
-    "structuredCsv": "structured.csv",
-    "researchCsv": "research.csv"
+    "structuredCsv": "structured.csv"
   },
   "prefixes": {
     "previewId": "fuchu-import",
@@ -33,12 +32,9 @@
       "intro": "intro_seed",
       "memo": "memo_seed",
       "instagramUrl": "instagram_url",
-      "publishedSlug": "published_slug"
-    },
-    "research": {
-      "title": "title",
       "googleMapsUrl": "google_maps_url",
-      "csvMemo": "csv_memo"
+      "csvMemo": "csv_memo",
+      "publishedSlug": "published_slug"
     }
   }
 }
