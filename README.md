@@ -1,35 +1,27 @@
 # Dogshop Web
 
-`shops.json` を公開データとして利用し、`dataset` ごとの `structured.csv` / `research.csv` 入力から更新できる Next.js 製のWebアプリです。住所取得ツール、比較メモ、dataset 入力もこのディレクトリ配下にまとめて管理します。
+`dogshop-web` は、東京都府中市を中心としたワンコ同伴可能なお店を一覧・詳細・地図で閲覧できる Next.js アプリです。  
+公開データは `src/data/shops.json` を基準とし、`datasets/<datasetId>/` 配下の入力から更新します。
 
-## 機能
+## 概要
 
 - 一覧ページ
 - 店舗詳細ページ
-- `都道府県` `市区町村` `キーワード` `同伴エリア` での検索
+- `都道府県` `市区町村` `キーワード` `同伴エリア` による検索
 - OpenStreetMap + Leaflet による地図表示
-- Googleマップ、食べログ、Instagram への外部リンク
+- Googleマップ、食べログ、Instagram など外部リンク
 
-## 確認用リンク
+本番公開先:
 
-- ローカル既定: [http://localhost:3000](http://localhost:3000)
-- ローカル確認用ポート例: [http://127.0.0.1:3001](http://127.0.0.1:3001)
-- 本番: [https://dogshop-web.vercel.app](https://dogshop-web.vercel.app)
+- [https://dogshop-web.vercel.app](https://dogshop-web.vercel.app)
 
-## 主要ディレクトリ
+## 技術スタック
 
-- `src/data/shops.json`
-  - 公開用の正規化済み店舗データ
-- `datasets/<datasetId>/`
-  - dataset ごとの設定、構造化CSV、調査CSV、プレビューJSON
-- `address_tools/`
-  - Google Maps URL やブラウザ操作から住所を取得する補助ツール
-- `input/`
-  - 住所取得ツールや投稿作成の入力ファイル
-- `etc/`
-  - 比較メモや旧原稿などの作業用ドキュメント
-- `scripts/`
-  - dataset プレビュー生成と `shops.json` マージの共通スクリプト
+- `Next.js 16.2.1`
+- `React 19`
+- `Leaflet`
+- `react-leaflet`
+- `TypeScript`
 
 ## ローカル起動
 
@@ -39,11 +31,37 @@ npm install
 npm run dev
 ```
 
-必要に応じてポートを固定する場合:
+既定の確認先:
+
+- [http://localhost:3000](http://localhost:3000)
+
+ポートを固定したい場合:
 
 ```bash
 npm run dev -- --hostname 127.0.0.1 --port 3001
 ```
+
+補足:
+
+- 開発中は `npm run dev` を使います
+- `npm run start` は `npm run build` の成果物確認用です
+
+## 主要ディレクトリ
+
+- `src/app/`
+  - App Router のページ・画面実装
+- `src/data/shops.json`
+  - 公開用の正規化済み店舗データ
+- `datasets/<datasetId>/`
+  - 取り込み用データと設定
+- `scripts/`
+  - データ生成・統合スクリプト
+- `address_tools/`
+  - 住所取得や補助整形のツール
+- `input/`
+  - 元データや補助入力
+- `public/`
+  - 画像などの静的アセット
 
 ## 主要コマンド
 
@@ -53,24 +71,32 @@ npm run lint
 npm run build
 npm run build:data:preview -- --dataset=<datasetId>
 npm run build:data:merge -- --dataset=<datasetId>
+npm run vercel:pull:prod
+npm run vercel:build:prod
+npm run vercel:deploy:prod:direct
 ```
 
-## データ取り込みパイプライン
+## データ運用
 
-`dataset` は地域ごとの取り込み単位です。公開済みだった旧18件も、現行 dataset の `structured/research` 入力に統合済みです。
+公開データ更新は `datasets/<datasetId>/` を単位として行います。
+
+主なファイル:
 
 - `datasets/<datasetId>/dataset.json`
-  - dataset ごとの入出力パス、ID接頭辞、CSV列定義を管理する設定ファイル
+  - dataset 設定
 - `datasets/<datasetId>/structured.csv`
-  - Web取り込み前の整形済み入力CSV
+  - 取り込み用の整形済み CSV
 - `datasets/<datasetId>/research.csv`
-  - 調査・比較用の補助CSV
+  - 調査用 CSV
 - `datasets/<datasetId>/preview.json`
-  - 公開スキーマへ正規化した中間JSON
+  - 中間生成 JSON
+
+主なスクリプト:
+
 - `scripts/build-import-preview.mjs`
   - `structured.csv` と `research.csv` から `preview.json` を生成
 - `scripts/merge-import-shops.mjs`
-  - `preview.json` を現行 `src/data/shops.json` にマージ
+  - `preview.json` を `src/data/shops.json` に反映
 
 例:
 
@@ -79,54 +105,66 @@ npm run build:data:merge -- --dataset=<datasetId>
 - `datasets/fuchu/research.csv`
 - `datasets/fuchu/preview.json`
 
-### dataset 運用ルール
+`dataset` 運用ルール:
 
 - 1つの地域取り込み単位を `dataset` として扱います
-- `structured.csv` は Web 取り込み前の整形済み入力、`research.csv` は調査・比較用の補助入力です
-- CSVの列名は `datasets/<datasetId>/dataset.json` の `columns` に合わせて統一します
-- 新しい地域を追加するときは、既存の `datasets/<datasetId>/` をコピーして使います
-- 今後の更新はすべて `structured/research -> preview -> merge` の流れで行います
+- `structured.csv` は Web 取り込み前の整形済み入力です
+- `research.csv` は調査・比較用の補助入力です
+- CSV の列名は `datasets/<datasetId>/dataset.json` の `columns` に合わせます
+- 新しい地域を追加するときは既存の `datasets/<datasetId>/` をコピーして使います
+- 公開データの更新は `structured -> research -> preview -> merge` の流れを前提にします
 
-### データ更新フロー
+更新フロー:
 
-1. 特定 dataset のプレビューJSONを生成する
+1. 特定 dataset の入力を整える
+
+```bash
+cd "/home/ubuntu/etc/dogshop/dogshop-web"
+# datasets/<datasetId>/structured.csv
+# datasets/<datasetId>/research.csv
+```
+
+2. プレビュー JSON を生成する
 
 ```bash
 cd "/home/ubuntu/etc/dogshop/dogshop-web"
 npm run build:data:preview -- --dataset=<datasetId>
 ```
 
-2. 生成したプレビューJSONを現行公開データへ反映する
+3. 生成結果を確認する
+
+- `datasets/<datasetId>/preview.json`
+- 必要に応じて `structured.csv` / `research.csv` を修正して再生成
+
+4. 現行公開データへ反映する
 
 ```bash
 cd "/home/ubuntu/etc/dogshop/dogshop-web"
 npm run build:data:merge -- --dataset=<datasetId>
 ```
 
-3. `src/data/shops.json` または `datasets/<datasetId>/preview.json` を確認する
-4. `npm run lint && npm run build` で確認する
-5. Vercel に再デプロイする
+5. 反映後の公開データを確認する
 
-## 住所取得ツール
+- `src/data/shops.json`
 
-住所取得まわりのスクリプトと依存関係は `address_tools/` にまとめています。
+6. アプリ全体として検証する
 
-- `address_tools/extract_address_from_maps_browser.mjs`
-- `address_tools/extract_google_maps_info.py`
-- `address_tools/add_address.py`
+```bash
+cd "/home/ubuntu/etc/dogshop/dogshop-web"
+npm run lint
+npm run build
+```
 
-既定の入出力先:
+7. 必要に応じて本番へ反映する
 
-- 入力: `input/favorite.csv`
-- 出力: `input/web_places_input.csv`
+- 通常は `git push origin HEAD`
+- 非常時は `npm run vercel:deploy:prod:direct`
 
-`input/prompt_make_post` は投稿原稿作成時のプロンプト入力として利用できます。
+## 表示制御
 
-## 表示制御フラグ
+`src/data/shops.json` の各店舗には `isVisible` フラグを持たせられます。
 
-`src/data/shops.json` の各店舗に `isVisible` フラグを持たせられます。
-
-- `true` または未指定: Webに表示
+- `true` または未指定: Web に表示
 - `false`: 一覧・詳細ページの両方で非表示
 
 例:
@@ -138,40 +176,39 @@ npm run build:data:merge -- --dataset=<datasetId>
 }
 ```
 
-## 座標取得について
+## 住所取得ツール
 
-- 住所ベースのジオコーディングには国土地理院の検索APIを利用しています
-- 住所解決できない場合のみ Google Maps URL をフォールバックとして使います
+住所取得関連の補助スクリプトは `address_tools/` にまとめています。
 
-## GitHub CLI メモ
+主なファイル:
 
-この環境では `gh` が利用可能です。GitHub アカウントを `piropiropi0611-art` に切り替えるときは、以下を実行します。
+- `address_tools/add_address.py`
+- `address_tools/extract_google_maps_info.py`
+- `address_tools/extract_address_from_maps_browser.mjs`
 
-```bash
-gh auth switch --user piropiropi0611-art
-```
+既定入出力:
+
+- 入力: `input/favorite.csv`
+- 出力: `input/web_places_input.csv`
+
+補足:
+
+- 住所ベースのジオコーディングには国土地理院 API を利用
+- 補完が必要な場合は Google Maps URL を使う
 
 ## デプロイ
 
 通常の本番デプロイは、GitHub に push して Vercel 連携デプロイを発火させます。
 
-### 通常運用
+通常運用:
 
 ```bash
 git push origin HEAD
 ```
 
-### 非常用の直デプロイ
+非常用の直デプロイ:
 
-GitHub 連携でのデプロイが使えない場合は、このリポジトリから Vercel CLI で直接本番反映できます。
-
-前提:
-
-- `npm install` 済みであること
-- `.vercel/project.json` が存在すること
-- Vercel へアクセスできる環境であること
-
-利用コマンド:
+GitHub 連携でのデプロイが使えない場合は、このリポジトリから直接 Vercel CLI で本番反映できます。
 
 ```bash
 npm run vercel:pull:prod
@@ -181,8 +218,5 @@ npm run vercel:deploy:prod:direct
 
 補足:
 
-- `vercel:pull:prod` は production の project settings と環境変数を取得
-- `vercel:build:prod` は `pull -> vercel build --prod`
-- `vercel:deploy:prod:direct` は `pull -> build -> deploy --prebuilt --prod`
-- 直デプロイ系スクリプトは `.vercel/project.json` の `projectId` / `orgId` を自動利用する
-- `.vercelignore` で `.next` と `node_modules` をアップロード対象から外している
+- `.vercel/project.json` の `projectId` / `orgId` を自動利用します
+- `.vercelignore` で `.next` と `node_modules` をアップロード対象から外しています
