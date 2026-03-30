@@ -6,6 +6,7 @@ import { getAllShops } from "@/lib/shops";
 
 export default function Home() {
   const shops = getAllShops();
+  const isDevelopment = process.env.NODE_ENV === "development";
 
   return (
     <main className="min-h-screen bg-stone-50 px-4 py-8 text-zinc-900 sm:px-6 sm:py-10 lg:px-8">
@@ -21,6 +22,7 @@ export default function Home() {
                     width={128}
                     height={128}
                     className="h-20 w-20 object-cover sm:h-24 sm:w-24 lg:h-28 lg:w-28"
+                    unoptimized={isDevelopment}
                     priority
                   />
                 </div>
