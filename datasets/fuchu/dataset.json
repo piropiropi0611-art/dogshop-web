@@ -15,9 +15,6 @@
     "preview": 3,
     "publicSlug": 2
   },
-  "filters": {
-    "excludeWhenHoursContains": "閉店"
-  },
   "columns": {
     "structured": {
       "name": "name",
@@ -32,6 +29,8 @@
       "memo": "memo",
       "officialSiteUrl": "official_site_url",
       "tabelogUrl": "tabelog_url",
+      "isVisited": "is_visited",
+      "isHidden": "is_hidden",
       "instagramUrl": "instagram_url",
       "googleMapsUrl": "google_maps_url",
       "extraMemo": "extra_memo",

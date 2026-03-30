@@ -36,6 +36,34 @@ function resolveDatasetPaths(config, overrides) {
   };
 }
 
+function parseIsHidden(value, fallback = false) {
+  const text = sanitizeText(value).toLowerCase();
+
+  if (text === "true" || text === "1" || text === "yes") {
+    return true;
+  }
+
+  if (text === "false" || text === "0" || text === "no") {
+    return false;
+  }
+
+  return fallback;
+}
+
+function parseIsVisited(value, fallback = false) {
+  const text = sanitizeText(value).toLowerCase();
+
+  if (text === "true" || text === "1" || text === "yes") {
+    return true;
+  }
+
+  if (text === "false" || text === "0" || text === "no") {
+    return false;
+  }
+
+  return fallback;
+}
+
 export async function buildImportPreview(options = {}) {
   const args = parseArgs(options.argv ?? process.argv.slice(2));
   const datasetId = options.datasetId ?? args.dataset;
@@ -52,18 +80,11 @@ export async function buildImportPreview(options = {}) {
   ]);
 
   const structuredColumns = config.columns.structured;
-  const excludeText = config.filters?.excludeWhenHoursContains ?? "";
   const previewPrefix = config.prefixes.previewId;
   const previewSlugPrefix = config.prefixes.previewSlug ?? previewPrefix;
   const previewPadding = config.padding?.preview ?? 3;
 
-  const structuredRows = rowsToObjects(parseCsv(structuredCsv)).filter((row) => {
-    if (!excludeText) {
-      return true;
-    }
-
-    return !String(row[structuredColumns.hours] ?? "").includes(excludeText);
-  });
+  const structuredRows = rowsToObjects(parseCsv(structuredCsv));
   const currentShops = JSON.parse(currentShopsRaw);
   const currentBySlug = new Map(currentShops.map((shop) => [shop.slug, shop]));
 
@@ -94,7 +115,10 @@ export async function buildImportPreview(options = {}) {
       slug:
         publishedSlug ||
         formatSequence(previewSlugPrefix, index + 1, previewPadding),
-      isVisible: existingShop?.isVisible ?? true,
+      isHidden: parseIsHidden(
+        row[structuredColumns.isHidden],
+        existingShop?.isHidden ?? existingShop?.hidden ?? (existingShop?.isVisible === false),
+      ),
       name: sanitizeText(row[structuredColumns.name]),
       prefecture: existingShop?.prefecture || prefecture,
       city: existingShop?.city || city,
@@ -112,18 +136,17 @@ export async function buildImportPreview(options = {}) {
       rules: splitRules(row[structuredColumns.rules]),
       memo: sanitizeText(row[structuredColumns.memo]) || null,
       googleMapsUrl:
-        sanitizeText(row[structuredColumns.googleMapsUrl]) ||
-        existingShop?.googleMapsUrl ||
-        null,
+        sanitizeText(row[structuredColumns.googleMapsUrl]) || null,
       officialSiteUrl:
         sanitizeText(row[structuredColumns.officialSiteUrl]) || null,
       tabelogUrl:
         sanitizeText(row[structuredColumns.tabelogUrl]) || null,
       instagramUrl:
-        sanitizeText(row[structuredColumns.instagramUrl]) ||
-        existingShop?.instagramUrl ||
-        null,
-      visitStatus: existingShop?.visitStatus ?? "ピロプー訪店済",
+        sanitizeText(row[structuredColumns.instagramUrl]) || null,
+      isVisited: parseIsVisited(
+        row[structuredColumns.isVisited],
+        existingShop?.isVisited ?? existingShop?.visited ?? false,
+      ),
       sourceCsvMemo:
         sanitizeText(row[structuredColumns.extraMemo] ?? "") || null,
     };

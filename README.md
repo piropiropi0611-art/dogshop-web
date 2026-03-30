@@ -9,7 +9,7 @@
 - 店舗詳細ページ
 - `都道府県` `市区町村` `キーワード` `同伴エリア` による検索
 - OpenStreetMap + Leaflet による地図表示
-- Googleマップ、食べログ、Instagram など外部リンク
+- Googleマップ、公式サイト、食べログ、Instagram など外部リンク
 
 本番公開先:
 
@@ -109,6 +109,7 @@ npm run vercel:deploy:prod:direct
 - 1つの地域取り込み単位を `dataset` として扱います
 - `structured.csv` は Web 取り込み前の整形済み入力です
 - CSV の列名は `datasets/<datasetId>/dataset.json` の `columns` に合わせます
+- 現在の主要なブーリアン列は `is_visited` / `is_hidden` です
 - 新しい地域を追加するときは既存の `datasets/<datasetId>/` をコピーして使います
 - 公開データの更新は `structured -> preview -> merge` の流れを前提にします
 - `dogAreaCategories` / `dogAreaFilterGroups` は `structured.csv` の内容から毎回導出します
@@ -116,6 +117,64 @@ npm run vercel:deploy:prod:direct
 - 既存店の座標と geocode 状態は `src/data/shops.json` を正本として扱います
 - `preview.json` は座標確認用ではなく、CSV 由来の表示項目確認用です
 
+## CSVロジック反映ルール
+
+`structured.csv` の一部列は、そのまま表示するのではなくスクリプトで整形・導出してから使います。
+
+- `address`
+  - 先頭の郵便番号 (`〒183-0000` 形式) は除去します
+  - 検索条件に使用する `prefecture` / `city` を住所文字列から正規表現で抽出します
+- `intro`
+  - 文字列を整形したうえで、`。 ` は `。\n` に置換して改行を入れます
+- `dog_area`
+  - 空欄の場合は `同伴条件は店舗案内に準ずる` を入れます
+- `dog_menu`
+  - 空欄の場合は `なし` を入れます
+- `rules`
+  - `/` を区切り文字として複数ルールに分割します
+  - 例: `カフェマット: 必須 / カート入店: OK`
+  - 空要素は捨てます
+  - `要確認` `未確認` `記載なし` `案内に準ずる` などの文言を含む要素はルールとして採用しません
+  - ルールらしいキーワード (`カフェマット` `カート` `同伴` `禁煙` など) を含む要素だけ採用します
+- `dogAreaCategories` / `dogAreaFilterGroups`
+  - `dog_area` 単体ではなく、`dog_area + memo + rules + extra_memo` をまとめて判定します
+  - `テラス` `サンルーム` `外席` `ベンチ` `店内OK` などの語を見てカテゴリを導出します
+  - カテゴリが1つも判定できない場合は `その他` にします
+- `parking`
+  - 最初に見つかった `(\d+)台` を `parkingSpaces` として抽出します
+  - 見つからなければ `null` です
+- `is_visited`
+  - 真偽値列として扱います
+  - 判定ルール:
+
+    | CSV値 | 既存店に同一 slug がある | 生成値 |
+    | --- | --- | --- |
+    | `true` / `1` / `yes` | 問わない | `true` |
+    | `false` / `0` / `no` | 問わない | `false` |
+    | 空欄または上記以外 | ある | 既存の `isVisited` 値を維持 |
+    | 空欄または上記以外 | ない | `false` |
+
+  - 画面表示では `true => ピロプー訪店済`, `false => 未訪店` に変換します
+- `is_hidden`
+  - 非表示フラグとして扱います
+  - 判定ルール:
+
+    | CSV値 | 既存店に同一 slug がある | 生成値 |
+    | --- | --- | --- |
+    | `true` / `1` / `yes` | 問わない | `true` |
+    | `false` / `0` / `no` | 問わない | `false` |
+    | 空欄または上記以外 | ある | 既存の `isHidden` 値を維持 |
+    | 空欄または上記以外 | ない | `false` |
+
+  - 意味は `true => 非表示`, `false => 表示` です
+- `official_site_url` / `tabelog_url` / `instagram_url` / `google_maps_url`
+  - URL列として扱い、空欄は `null` に正規化します
+  - 各列とも CSV 値を優先してそのまま反映します
+
+- 文字列整形 (`sanitizeText`)
+  - 連続改行は1つの改行に畳みます
+  - 連続スペース / タブは1つの半角スペースに畳みます
+  - 前後の空白は除去します
 更新フロー:
 
 1. 特定 dataset の入力を整える
@@ -168,17 +227,17 @@ npm run build
 
 ## 表示制御
 
-`src/data/shops.json` の各店舗には `isVisible` フラグを持たせられます。
+`src/data/shops.json` の各店舗には `isHidden` フラグを持たせられます。
 
-- `true` または未指定: Web に表示
-- `false`: 一覧・詳細ページの両方で非表示
+- `true`: 一覧・詳細ページの両方で非表示
+- `false` または未指定: Web に表示
 
 例:
 
 ```json
 {
   "slug": "fuchu-01",
-  "isVisible": false
+  "isHidden": true
 }
 ```
 

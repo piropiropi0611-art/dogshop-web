@@ -3,6 +3,10 @@ import Link from "next/link";
 import { ShopLinkIcons } from "@/components/shop-link-icons";
 import type { Shop } from "@/types/shop";
 
+function visitedLabel(isVisited: boolean) {
+  return isVisited ? "ピロプー訪店済" : "未訪店";
+}
+
 type ShopCardProps = {
   shop: Shop;
   isActive?: boolean;
@@ -35,7 +39,7 @@ export function ShopCard({ shop, isActive = false, onSelect }: ShopCardProps) {
           </span>
         ))}
         <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
-          {shop.visitStatus}
+          {visitedLabel(shop.isVisited)}
         </span>
       </div>
 

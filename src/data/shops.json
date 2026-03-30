@@ -23,7 +23,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E5%BA%9C%E4%B8%AD%E3%83%86%E3%83%A9%E3%82%B9/data=!4m2!3m1!1s0x6018e59679eac52b:0xd7f84cfb667da5aa",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13253755/",
     "instagramUrl": "https://www.instagram.com/base.s_fuchuterrace/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗、日除け・風除けあり、日除けがあるので多少の雨なら影響なし。冷房器具および暖房器具の有無は不明。",
     "dogAreaCategories": [
       "テラス席OK"
@@ -31,7 +30,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://fuchuterrace.com/"
+    "officialSiteUrl": "https://fuchuterrace.com/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-20",
@@ -57,7 +58,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/SOIGIN+COFFEE+hasami/data=!4m2!3m1!1s0x6018e5007de91a1f:0x399d8122d72f13fa",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13274291/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "外席ベンチあり",
     "dogAreaCategories": [
       "外席OK"
@@ -65,7 +65,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://soigin.com/"
+    "officialSiteUrl": "https://soigin.com/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-01",
@@ -93,7 +95,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E5%BA%9C%E4%B8%AD%E3%81%A7%E9%87%8E%E8%8F%9C%E3%82%92%E9%A3%9F%E3%81%B9%E3%82%8B%E3%81%AA%E3%82%89%E5%8C%BB%E9%A3%9F%E5%B1%8Bnobu%E7%99%BA%E9%85%B5%E9%87%8E%E8%8F%9C%E3%83%BB%E8%87%AA%E7%84%B6%E9%A3%9F/data=!4m2!3m1!1s0x6018e4fb9596aaab:0xc2635a3889954140",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13272638/",
     "instagramUrl": "https://www.instagram.com/ishokuyanobu/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "店内ワンコ🆗です。カフェマット必須。",
     "dogAreaCategories": [
       "店内OK"
@@ -101,7 +102,9 @@
     "dogAreaFilterGroups": [
       "店内OK"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-21",
@@ -127,7 +130,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%82%AB%E3%83%95%E3%82%A7%E9%96%8B/data=!4m2!3m1!1s0x6018e49cf922342b:0xf63351040c0bdaf7",
     "tabelogUrl": "https://tabelog.com/tokyo/A1327/A132702/13241706/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席とサンルームがワンコ🆗らしいです。\nテラス席は屋根付き風防あり。",
     "dogAreaCategories": [
       "テラス席OK"
@@ -135,7 +137,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-22",
@@ -163,7 +167,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%82%B9%E3%83%AA%E3%83%BC%E3%82%A2%E3%83%AD%E3%83%BC%E3%82%BA%E3%83%96%E3%83%AB%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%B0/data=!4m2!3m1!1s0x6018e50075348823:0x5fef25505e3f4b47",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13311113/",
     "instagramUrl": "https://www.instagram.com/three.arrows.brewing/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "店内立ち飲み。店内と外のテラス席がワンコ🆗",
     "dogAreaCategories": [
       "店内OK",
@@ -173,7 +176,9 @@
       "店内OK",
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://threearrowsbrewing.com"
+    "officialSiteUrl": "https://threearrowsbrewing.com",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-23",
@@ -199,7 +204,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E8%84%87%E7%94%BA%E7%8F%88%E7%90%B2/data=!4m2!3m1!1s0x6018e566619cc099:0x8f565c8a11e5e64d",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13256519/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "空いていれば外席ベンチでワンコ🆗らしいです",
     "dogAreaCategories": [
       "外席OK"
@@ -207,7 +211,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-02",
@@ -233,7 +239,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%90%E3%83%83%E3%82%AF%E3%82%B9+%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC+%E5%BA%9C%E4%B8%AD%E8%A5%BF%E5%BA%9C%E5%BA%97/data=!4m2!3m1!1s0x6018e5002dadd9e9:0x899e7841c35f64ae",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13265881/",
     "instagramUrl": "https://www.instagram.com/starbucks_j/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗です",
     "dogAreaCategories": [
       "テラス席OK"
@@ -241,7 +246,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://store.starbucks.co.jp/detail-1979/"
+    "officialSiteUrl": "https://store.starbucks.co.jp/detail-1979/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-24",
@@ -267,7 +274,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Cafe+%E3%82%B3%E3%83%83%E3%83%88%E3%83%B3%E7%95%91/data=!4m2!3m1!1s0x6018e4eff7fa09a3:0x319aeec3204f2aa2",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13110294/",
     "instagramUrl": "https://www.instagram.com/cafe.cotton1996",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗\n就労継続支援B型事業所。ホールスタッフは就労トレーニングが目的の接客なのでご承知おきください。",
     "dogAreaCategories": [
       "テラス席OK"
@@ -275,7 +281,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-25",
@@ -303,7 +311,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E4%BA%AC%E9%83%BD%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3+%E3%82%88%E3%81%93%E5%B7%9D/data=!4m2!3m1!1s0x6018e50033138905:0xa50b659bfd8a2bba",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13307196/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "外席があってワンコと一緒食べられます\nとなりの呑み屋のもつしげさんの外席も利用出来ます(系列店)",
     "dogAreaCategories": [
       "外席OK"
@@ -311,7 +318,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-03",
@@ -337,7 +346,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%82%82%E3%81%A4%E3%81%97%E3%81%92+%E5%BA%9C%E4%B8%AD%E5%BA%97/data=!4m2!3m1!1s0x6018e5c8958f57b1:0xfacabdc8059b849d",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13306727/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "暖季は外席が出てワンコ🆗です",
     "dogAreaCategories": [
       "外席OK"
@@ -345,7 +353,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://motsushige.com/"
+    "officialSiteUrl": "https://motsushige.com/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-04",
@@ -373,7 +383,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%83%A1%E3%83%87%E3%82%A3%E3%83%90%E3%83%AB+%C3%97+%E3%82%BF%E3%83%8B%E3%82%BF%E3%82%AB%E3%83%95%E3%82%A7+%E6%9D%B1%E5%BA%9C%E4%B8%AD/data=!4m2!3m1!1s0x6018e50052c5fb33:0x4cff8fc2c4999289",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13303697/",
     "instagramUrl": "https://www.instagram.com/tanitacafe.official/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗です。屋根ありヒーターあり。\nモバイルオーダー。\nワンコ同伴はルールがいろいろ決められてるので要確認。\n床下かカートのみ🆗、イス上と飼い主膝上は🆖。",
     "dogAreaCategories": [
       "テラス席OK"
@@ -381,7 +390,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-26",
@@ -409,7 +420,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Caf%C3%A9+Brico/data=!4m2!3m1!1s0x6018e5f2c9fb867d:0xabe7e23dc06057df",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13308224/",
     "instagramUrl": "https://www.instagram.com/cafebrico.fuchu.25/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "インナーテラス席がワンコ🆗です。\n屋根付き、ヒーターあり。",
     "dogAreaCategories": [
       "テラス席OK"
@@ -417,7 +427,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://cafebrico-fuchu.com/"
+    "officialSiteUrl": "https://cafebrico-fuchu.com/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-27",
@@ -445,7 +457,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%82%A2%E3%83%B3%E3%82%AA%E3%83%95%E3%82%A3%E3%82%B7%E3%83%A3%E3%83%AB/data=!4m2!3m1!1s0x6018e529e358007d:0xbf2e7e27a64f9b46",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13295874/",
     "instagramUrl": "https://www.instagram.com/anofficial2020/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "外席ワンコ🆗、購入した生洋菓子・焼き菓子等のイートインやドリンクメニューあり",
     "dogAreaCategories": [
       "外席OK"
@@ -453,7 +464,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://www.anofficial.jp/"
+    "officialSiteUrl": "https://www.anofficial.jp/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-28",
@@ -479,7 +492,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E8%BE%B2%E9%A3%9F%EF%BC%88NOUSHOKU%EF%BC%89%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3%EF%BC%86%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97/data=!4m2!3m1!1s0x6018e50076ec9a31:0x89e30ae239e2712f",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13308862/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗です",
     "dogAreaCategories": [
       "テラス席OK"
@@ -487,7 +499,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://tuat-hub.com"
+    "officialSiteUrl": "https://tuat-hub.com",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-29",
@@ -513,7 +527,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Caf%C3%A9+%E3%81%9D%E3%82%89%E3%81%84%E3%82%8D/data=!4m2!3m1!1s0x6018e5dc32dead0d:0x8139d07aa15738b5",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13247065/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗です。屋根ありで日除け雨除けあり",
     "dogAreaCategories": [
       "テラス席OK"
@@ -521,12 +534,13 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://sorairo-cafe.com/"
+    "officialSiteUrl": "https://sorairo-cafe.com/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-30",
     "slug": "fuchu-30",
-    "isVisible": false,
     "name": "Ｄ‐ｋｉｔｃｈｅｎ＆鍼灸BODYCARE(表記未特定)",
     "prefecture": "東京都",
     "city": "府中市",
@@ -548,7 +562,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%EF%BC%A4%E2%80%90%EF%BD%8B%EF%BD%89%EF%BD%94%EF%BD%83%EF%BD%88%EF%BD%85%EF%BD%8E%EF%BC%86%E9%8D%BC%E7%81%B8BODYCARE/data=!4m2!3m1!1s0x6018e37edb866fb1:0xfe946fee6ec1a25d",
     "tabelogUrl": null,
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗です。\n木曜日の昼のみ営業中。",
     "dogAreaCategories": [
       "テラス席OK"
@@ -556,7 +569,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": true,
+    "isVisited": true
   },
   {
     "id": "shop-31",
@@ -585,7 +600,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/Caffe%26Bar+Aeroporto/data=!4m2!3m1!1s0x6018e5681e71b833:0xac400b39826aa115",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13186825/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "店内ワンコ🆗、店主が動物アレルギーになってしまったため、毛が抜けない犬種＆店内でおとなしく出来るのが条件。",
     "dogAreaCategories": [
       "店内OK"
@@ -593,7 +607,9 @@
     "dogAreaFilterGroups": [
       "店内OK"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-05",
@@ -619,7 +635,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/COCOROTUS+%E5%BA%9C%E4%B8%AD%E4%B9%83%E6%A3%AE%E7%8F%88%E7%90%B2%E5%BA%97/data=!4m2!3m1!1s0x6018e5de127dfd55:0xad51edf82344da99",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13255050/",
     "instagramUrl": "https://www.instagram.com/cocorotus/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "都立府中の森公園内のカフェ。テラス席ワンコ🆗、日除けパラソルあり。雨除け・風除けなし。",
     "dogAreaCategories": [
       "テラス席OK"
@@ -627,7 +642,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://www.cocorotus.com/"
+    "officialSiteUrl": "https://www.cocorotus.com/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-32",
@@ -655,7 +672,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%83%A2%E3%83%8A%E3%83%A0%E3%83%BC%E3%83%AB%E6%B8%85%E9%A2%A8%E5%A0%82+%E6%9C%AC%E5%BA%97/data=!4m2!3m1!1s0x6018e4e4e2d60287:0x6cf376bec430ca82",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13034557/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "1Fカフェフロアにテラス席ありワンコ🆗。\n2Fのレストランメニュー提供も相談出来る模様。",
     "dogAreaCategories": [
       "テラス席OK"
@@ -663,7 +679,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "http://www.monamour.jp/"
+    "officialSiteUrl": "http://www.monamour.jp/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-33",
@@ -689,7 +707,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/bake+shop+pota/data=!4m2!3m1!1s0x6018e50011a0dae7:0x18398d83bfc4d854",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13284567/",
     "instagramUrl": "https://www.instagram.com/bakeshoppota/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "外席にベンチとテーブルありでワンコ🆗。\nテイクアウトメニューのみで、スイーツ系はテイクアウトのみでイートインは無理そう。",
     "dogAreaCategories": [
       "外席OK"
@@ -697,7 +714,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://bakeshoppota.com/"
+    "officialSiteUrl": "https://bakeshoppota.com/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-06",
@@ -723,7 +742,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%81%93%E3%81%A8%E3%81%BF%E9%A3%9F%E5%A0%82/data=!4m2!3m1!1s0x6018e4c385a628f1:0xe63895d1b8f11748",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13266695/",
     "instagramUrl": "https://www.instagram.com/cw.kotomi.shokudo/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "府中市の観光物産館に併設、施設の共用休憩場所としてテラス席がありワンコも🆗。テラス席は共用なので、持ち込み、施設自販機の利用、休日に数台来るキッチンカー商品の飲食も可能",
     "dogAreaCategories": [
       "テラス席OK"
@@ -731,7 +749,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://kotomicommunity080.wixsite.com/comunitywork/kotomi"
+    "officialSiteUrl": "https://kotomicommunity080.wixsite.com/comunitywork/kotomi",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-34",
@@ -757,7 +777,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/KITCHEN%26CAFE-BAR+%E3%80%8CSHINKER%E3%80%8D(%E3%82%AD%E3%83%83%E3%83%81%E3%83%B3%E3%83%BB%E3%82%AB%E3%83%95%E3%82%A7%E3%83%90%E3%83%BC%E3%80%8C%E3%82%B7%E3%83%B3%E3%82%AB%E3%83%BC%E3%80%8D)/data=!4m2!3m1!1s0x6018e52fbc1a9291:0x804f55c740cce848",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13278117/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗\nマンション北側に面しており陽が全く入らないため、夏は涼しく冬は寒い。簡易の雨除けのみ、風除けなし",
     "dogAreaCategories": [
       "テラス席OK"
@@ -765,7 +784,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-35",
@@ -791,7 +812,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/coffee+and+bake+douceur/data=!4m2!3m1!1s0x6018e48b5cdf5b39:0xe640961cb734faf7",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13283281/",
     "instagramUrl": "https://www.instagram.com/coffeeandbakedouceur/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "店内ワンコ🆗、人気店で入店待ちで長時間並ぶ場合あり。予約不可。時間に余裕のあるときの利用を推奨。混雑すると店外待ちもあるので夏場にワンコ連れていくのは注意。",
     "dogAreaCategories": [
       "店内OK"
@@ -799,7 +819,9 @@
     "dogAreaFilterGroups": [
       "店内OK"
     ],
-    "officialSiteUrl": "https://douceur.shop/"
+    "officialSiteUrl": "https://douceur.shop/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-36",
@@ -827,7 +849,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%81%A0%E3%81%8C%E3%82%84/data=!4m2!3m1!1s0x6018e4ef69be353f:0x8efbc2466dfc3b53",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13109036/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "暖季に外席を出すときがありワンコ🆗です。\n日除け・雨除け・風除けいずれもなし。",
     "dogAreaCategories": [
       "外席OK"
@@ -835,7 +856,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-08",
@@ -861,7 +884,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/KIZUNADINING%26WANTOK+CAFE+%E5%BA%9C%E4%B8%AD%E3%81%8F%E3%82%8B%E3%82%8B%E5%BA%97/data=!4m2!3m1!1s0x6018e500168ae347:0xabd17cc109578a14",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13294813/",
     "instagramUrl": "https://instagram.com/kizunadining?igshid=NzZlODBkYWE4Ng%3D%3D&utm_source=qr",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "外席ワンコ🆗です",
     "dogAreaCategories": [
       "外席OK"
@@ -869,7 +891,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-37",
@@ -895,7 +919,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/CAFE+WHANAU/data=!4m2!3m1!1s0x6018e5c99be1a319:0xb389d78cfc17b9af",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13293902/",
     "instagramUrl": "https://www.instagram.com/cafe_whanau/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗です",
     "dogAreaCategories": [
       "テラス席OK"
@@ -903,7 +926,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-09",
@@ -929,7 +954,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E7%8F%88%E7%90%B2%E9%B3%B4%E9%A4%A8+%E5%BA%9C%E4%B8%AD%E5%AE%AE%E7%94%BA%E5%BA%97/data=!4m2!3m1!1s0x6018e4e48693e5fb:0x385467498597b762",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13143527/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "暖かい季節のみテラス席ありワンコ🆗、雨除け日除けなし。",
     "dogAreaCategories": [
       "テラス席OK"
@@ -937,7 +961,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://meikan.jp/"
+    "officialSiteUrl": "https://meikan.jp/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-38",
@@ -963,7 +989,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E9%88%B4%E6%9C%A8%E5%B1%8B%E5%95%86%E5%BA%97/data=!4m2!3m1!1s0x6018e4e57e5ba5f5:0x30cceb30dc826435",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13144510/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "ワンコのフードやオヤツ売ってます",
     "dogAreaCategories": [
       "店内OK"
@@ -971,7 +996,9 @@
     "dogAreaFilterGroups": [
       "店内OK"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-10",
@@ -997,7 +1024,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%83%A2%E3%83%B3%E3%83%9E%E3%82%B9%E3%83%86%E3%82%A3%E3%83%BC+%E6%9D%B1%E5%BA%9C%E4%B8%AD%E5%BA%97/data=!4m2!3m1!1s0x6018e50e1ca9d665:0x10f6ddb655a9791e",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13261008/",
     "instagramUrl": "https://www.instagram.com/monmouth_tea.higashifuchu/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "外席ベンチがあります",
     "dogAreaCategories": [
       "外席OK"
@@ -1005,7 +1031,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "http://www.monmouth.jp/"
+    "officialSiteUrl": "http://www.monmouth.jp/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-39",
@@ -1031,7 +1059,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E7%B4%85%E8%91%89/data=!4m2!3m1!1s0x6018e5682d47aebd:0x52c80d67612b0ec2",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13129182/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "西武多摩川線・多磨駅ロータリー傍のたこ焼き屋、イートイン用のベンチスぺースあり。",
     "dogAreaCategories": [
       "外席OK"
@@ -1039,12 +1066,13 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-40",
     "slug": "fuchu-40",
-    "isVisible": false,
     "name": "越中屋酒店",
     "prefecture": "東京都",
     "city": "府中市",
@@ -1066,7 +1094,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%EF%BC%88%E6%9C%89%EF%BC%89%E8%B6%8A%E4%B8%AD%E5%B1%8B%E9%85%92%E5%BA%97/data=!4m2!3m1!1s0x6018e46077498fe9:0xbbe2c7ce28cd3d14",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13204555/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "喫煙席を兼ねた店頭ベンチ席ワンコ🆗、日除け・雨除け・風除けいずれもなし。角打ちに近い形態。つまみは店内の市販商品を購入。",
     "dogAreaCategories": [
       "外席OK"
@@ -1074,7 +1101,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": true,
+    "isVisited": true
   },
   {
     "id": "shop-41",
@@ -1100,7 +1129,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E8%8C%B6%E6%88%BF%E5%B1%B1%E3%82%82%E3%82%82/data=!4m2!3m1!1s0x6018e5699b3d8737:0x63ef06d9082f4e3e",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13106850/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗、ガーデン風で雰囲気良し。",
     "dogAreaCategories": [
       "テラス席OK"
@@ -1108,7 +1136,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-42",
@@ -1136,7 +1166,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%82%B5%E3%83%AD%E3%83%B3%E3%83%BB%E3%83%89%E3%83%BB%E3%82%AB%E3%83%A2%E3%82%B7%E3%82%BF/data=!4m2!3m1!1s0x6018e489e8c50eed:0xebf917bf8f93f5eb",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13085209/",
     "instagramUrl": "https://www.facebook.com/Salonkamoshita/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "店内ワンコ🆗。\n他の利用客から利用同意が得られるのが条件。",
     "dogAreaCategories": [
       "店内OK"
@@ -1144,7 +1173,9 @@
     "dogAreaFilterGroups": [
       "店内OK"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-11",
@@ -1170,7 +1201,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%83%AD%E3%82%A4%E3%83%A4%E3%83%AB%E3%83%9B%E3%82%B9%E3%83%88%E5%BA%9C%E4%B8%AD%E6%9D%B1%E5%BA%97/data=!4m2!3m1!1s0x6018e4e32fa74039:0xd2ec64efe50896de",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13095156/",
     "instagramUrl": "https://www.instagram.com/royalhost_official/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗、日除けあり。",
     "dogAreaCategories": [
       "テラス席OK"
@@ -1178,7 +1208,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://www.royalhost.jp/"
+    "officialSiteUrl": "https://www.royalhost.jp/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-43",
@@ -1204,7 +1236,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/cafe+bond/data=!4m2!3m1!1s0x6018e5da931121a7:0xe8b90fd03c58b920",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13256055/",
     "instagramUrl": "https://www.instagram.com/bond.koremasa528/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗、店頭の１卓のみ、屋根あり。",
     "dogAreaCategories": [
       "テラス席OK"
@@ -1212,7 +1243,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://cafebond.jp/"
+    "officialSiteUrl": "https://cafebond.jp/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-44",
@@ -1238,7 +1271,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/MR.coffeestand%2Fhamburger/data=!4m2!3m1!1s0x60189349b17c894b:0x8faa5e157b24f4b8",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13293535/",
     "instagramUrl": "https://www.instagram.com/mr.coffeestand/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "美容室の敷地内の常設キッチンカー、美容室内にカフェスペースがあり混雑していなければ、ワンコ🆗でイートイン利用可",
     "dogAreaCategories": [
       "店内OK",
@@ -1248,7 +1280,9 @@
       "店内OK",
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-45",
@@ -1274,7 +1308,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%83%AA%E3%83%96%E3%83%A9+%E3%82%AB%E3%83%95%E3%82%A7+%E3%83%AB%E3%82%A4/data=!4m2!3m1!1s0x6018e4c3a3f627ef:0xef6ab229fddfd740",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13238890/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "店内ワンコ🆗",
     "dogAreaCategories": [
       "店内OK"
@@ -1282,7 +1315,9 @@
     "dogAreaFilterGroups": [
       "店内OK"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-46",
@@ -1308,7 +1343,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%82%B7%E3%82%A7+%E3%82%A2%E3%83%B3%E3%83%87%E3%82%A3+%E3%83%A9%E3%83%9C/data=!4m2!3m1!1s0x6018e4fc79c004ab:0x994f75742a420025",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13110037/",
     "instagramUrl": "https://www.instagram.com/chez.andy.labo",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "かき氷が有名。ドリンクなども頂ける。店頭ベンチのみワンコ🆗。テイクアウト＆ベンチ用のかき氷メニューあり。",
     "dogAreaCategories": [
       "外席OK"
@@ -1316,7 +1350,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-12",
@@ -1342,7 +1378,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%83%A2%E3%82%B9%E3%83%90%E3%83%BC%E3%82%AC%E3%83%BC+%E6%9D%B1%E5%BA%9C%E4%B8%AD%E5%BA%97/data=!4m2!3m1!1s0x6018e5191cb132a3:0xb824ccc460e1073b",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13090586/",
     "instagramUrl": "https://www.instagram.com/mosburger_japan/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗、屋根あり",
     "dogAreaCategories": [
       "テラス席OK"
@@ -1350,7 +1385,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://www.mos.jp/"
+    "officialSiteUrl": "https://www.mos.jp/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-47",
@@ -1378,7 +1415,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E8%95%8E%E8%97%A4/data=!4m2!3m1!1s0x6018e51ed292b181:0x438df91b581595d7",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13241512/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗、仕切りや屋根があるため、日除け・雨除け・風除けいずれもある程度は問題なし。",
     "dogAreaCategories": [
       "テラス席OK"
@@ -1386,7 +1422,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "http://www.soba-kyoudou.com/"
+    "officialSiteUrl": "http://www.soba-kyoudou.com/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-13",
@@ -1412,7 +1450,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%83%AF%E3%82%A4%E3%83%B3%E3%83%86%E3%83%A9%E3%82%B9%E3%83%A6%E3%83%BC%E3%83%A1%E5%BA%9C%E4%B8%AD%E5%B8%82%E3%82%A4%E3%82%BF%E3%83%AA%E3%82%A2%E3%83%B3/data=!4m2!3m1!1s0x6018e4e4591185fd:0xc2828165a32e1742",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13170153/",
     "instagramUrl": "https://instagram.com/wineterraceyume",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗、日除け・雨除けあり。風除けなし。",
     "dogAreaCategories": [
       "テラス席OK"
@@ -1420,7 +1457,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "http://wineterraceyume.com"
+    "officialSiteUrl": "http://wineterraceyume.com",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-48",
@@ -1446,7 +1485,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/428cafe%2B/data=!4m2!3m1!1s0x6018e5cdc169736f:0xe253346ff4538dab",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13257850/",
     "instagramUrl": "https://www.instagram.com/btf.428cafe",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗です、日よけのパラソルのみ",
     "dogAreaCategories": [
       "テラス席OK"
@@ -1454,7 +1492,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://428cafe.com/"
+    "officialSiteUrl": "https://428cafe.com/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-49",
@@ -1482,7 +1522,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/cafe+dining+giraffe+%E3%82%AB%E3%83%95%E3%82%A7%E3%83%80%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0+%E3%82%B8%E3%83%A9%E3%83%95/data=!4m2!3m1!1s0x6018e50e6c504c39:0x260295837b4d6ba9",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13180455/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗です、日除け雨除けあり",
     "dogAreaCategories": [
       "テラス席OK"
@@ -1490,7 +1529,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://giraffe-fuchu.com/"
+    "officialSiteUrl": "https://giraffe-fuchu.com/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-50",
@@ -1518,7 +1559,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%81%8A%E9%A3%9F%E4%BA%8B%E5%87%A6%E3%81%A1%E3%82%83%E3%81%A1%E3%82%83/data=!4m2!3m1!1s0x6018e59df54753f3:0xf05ca06ba6c335d6",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13256668/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "店頭テラス席ワンコ🆗、日除け・雨除け・風除けいずれもなし。冬はヒーターが出る。定食がとてもおいしい。",
     "dogAreaCategories": [
       "テラス席OK"
@@ -1526,7 +1566,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-51",
@@ -1552,7 +1594,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%82%BF%E3%83%AA%E3%83%BC%E3%82%BA%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC+MINANO%E5%88%86%E5%80%8D%E6%B2%B3%E5%8E%9F%E5%BA%97/data=!4m2!3m1!1s0x6018e4ed8210dfc5:0x149acd358d4c38a7",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13090623/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "外席ワンコ🆗、商業施設1Fで屋根あり",
     "dogAreaCategories": [
       "外席OK"
@@ -1560,7 +1601,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://shop.tullys.co.jp/detail/1001476"
+    "officialSiteUrl": "https://shop.tullys.co.jp/detail/1001476",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-14",
@@ -1586,7 +1629,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E5%BA%9C%E4%B8%AD%E9%A4%83%E5%AD%90%E3%83%90%E3%83%AB%E3%81%82%E3%82%8F%E5%B1%8B/data=!4m2!3m1!1s0x6018e4faab110001:0xf865bf89fb10264f",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13196818/",
     "instagramUrl": "https://www.instagram.com/f_awaya/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗、屋根あり、風除けあり、スポットクーラーあり、業務用のスポットヒーターあり(真冬でもとても暖かい)",
     "dogAreaCategories": [
       "テラス席OK"
@@ -1594,12 +1636,13 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-52",
     "slug": "fuchu-52",
-    "isVisible": false,
     "name": "wineshop.il.savino",
     "prefecture": "東京都",
     "city": "府中市",
@@ -1621,7 +1664,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%83%AF%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97%E3%82%A4%E3%83%AB%E3%82%B5%E3%83%B4%E3%82%A3%E3%83%BC%E3%83%8E/data=!4m2!3m1!1s0x6018e59d3898ad27:0xc34df23e7f2ed698",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13269267/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗です、周囲が建物に囲まれてて、日が傾く時間は日かげになる、雨除け風除けなし",
     "dogAreaCategories": [
       "テラス席OK"
@@ -1629,7 +1671,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": true,
+    "isVisited": true
   },
   {
     "id": "shop-15",
@@ -1655,7 +1699,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%83%9E%E3%82%AF%E3%83%89%E3%83%8A%E3%83%AB%E3%83%89+%E5%9B%9B%E8%B0%B7%E6%A9%8B%E9%80%9A%E3%82%8A%E5%BA%9C%E4%B8%AD%E5%BA%97/data=!4m2!3m1!1s0x6018e47f06cfab77:0x5ef06fbda6e1567",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13119645/",
     "instagramUrl": "https://www.instagram.com/mcdonaldsjapan/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗です",
     "dogAreaCategories": [
       "テラス席OK"
@@ -1663,7 +1706,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://www.mcdonalds.co.jp/"
+    "officialSiteUrl": "https://www.mcdonalds.co.jp/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-16",
@@ -1689,7 +1734,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%90%E3%83%83%E3%82%AF%E3%82%B9+%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC+%E5%BA%9C%E4%B8%AD%E3%81%8F%E3%82%8B%E3%82%8B%E5%BA%97/data=!4m2!3m1!1s0x6018e4e4b9c458ef:0x593f3854649177de",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13024845/",
     "instagramUrl": "https://www.instagram.com/starbucks_j/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗、日除け・雨除け・風除けいずれもなし",
     "dogAreaCategories": [
       "テラス席OK"
@@ -1697,7 +1741,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://store.starbucks.co.jp/detail-630/"
+    "officialSiteUrl": "https://store.starbucks.co.jp/detail-630/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-53",
@@ -1723,7 +1769,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E5%BE%A1%E4%BC%91%E3%81%BF%E5%87%A6/data=!4m2!3m1!1s0x6018e4e51659aaab:0x25dac05aab50e1c3",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13088328/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "店頭のベンチ席ワンコ🆗、神社内にあり雰囲気がある穴場。植樹が多く日除けは問題なし。\n雨除け・風除けはなし。",
     "dogAreaCategories": [
       "外席OK"
@@ -1731,7 +1776,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://www.fsyakyo.or.jp/hamony"
+    "officialSiteUrl": "https://www.fsyakyo.or.jp/hamony",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-54",
@@ -1757,7 +1804,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E8%8F%A9%E6%8F%90%E6%A8%B9/data=!4m2!3m1!1s0x6018e4e69173bdbd:0xa966ba2b297ff4ce",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13054173/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗、日除け・雨除け・風除けいずれもなし。",
     "dogAreaCategories": [
       "テラス席OK"
@@ -1765,7 +1811,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-55",
@@ -1793,7 +1841,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%83%90%E3%82%A4%E3%82%AD%E3%83%B3%E3%82%B0%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3+%E6%9D%B1%E5%8C%97%E7%89%A7%E5%A0%B4/data=!4m2!3m1!1s0x6018e4fb50425a2f:0xf54354f6ec50b4dc",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13175261/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "ホテル1Fのレストラン、テラス席ワンコ🆗、屋根ありだが、冷暖房器具はなし、冬は寒い、BBQや鍋プランなどいろんな企画がある。",
     "dogAreaCategories": [
       "テラス席OK"
@@ -1801,7 +1848,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://www.hotel-kochiya.com/restaurant/"
+    "officialSiteUrl": "https://www.hotel-kochiya.com/restaurant/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-56",
@@ -1827,7 +1876,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%82%B3%E3%83%91%E3%83%87%E3%82%AB%E3%83%95%E3%82%A7%EF%BC%88CopadeCafe%EF%BC%89/data=!4m2!3m1!1s0x6018e4faf0edd263:0x24e87346bde0184b",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13036900/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "店頭にワンコ連れ向けの休憩ベンチスペースあり。屋根あり。",
     "dogAreaCategories": [
       "外席OK"
@@ -1835,7 +1883,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://copadecafe.jimdo.com"
+    "officialSiteUrl": "https://copadecafe.jimdo.com",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-57",
@@ -1863,7 +1913,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%82%A4%E3%83%B3%E3%83%87%E3%82%A3%E3%83%8F%E3%82%A6%E3%82%B9/data=!4m2!3m1!1s0x6018e4f8d1e09c05:0x5af9782e2b12cc05",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13022821/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "ドッグフレンドリー、店内ワンコ🆗、ワンコメニュー豊富、記念日向けケーキなどの依頼も可能。",
     "dogAreaCategories": [
       "店内OK"
@@ -1871,7 +1920,9 @@
     "dogAreaFilterGroups": [
       "店内OK"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-58",
@@ -1897,7 +1948,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E7%AB%8B%E3%81%A1%E5%91%91%E3%81%BF+%E3%81%9F%E3%81%AC%E3%81%8D/data=!4m2!3m1!1s0x6018e4ef441c2065:0xa721a774e6e25f72",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13110291/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "外席ワンコ🆗、雨除け・風除けなし。夜のみなので日除けの考慮不要。冬は一部コタツ席にするとの情報あるが未確認。",
     "dogAreaCategories": [
       "外席OK"
@@ -1905,12 +1955,13 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-59",
     "slug": "fuchu-59",
-    "isVisible": false,
     "name": "手造りダイニングバー アラカラバル",
     "prefecture": "東京都",
     "city": "府中市",
@@ -1932,7 +1983,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%82%A2%E3%83%A9%E3%82%AB%E3%83%A9%E3%83%90%E3%83%AB/data=!4m2!3m1!1s0x6018e4ef5cdf3217:0xaa9ceb001dea6365",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13168185/",
     "instagramUrl": "https://www.instagram.com/arakarabar/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "外席ワンコ🆗、マンション1Fの一部スペースを利用するため雨除け日除けは問題なし。風除け、暖房器具なし。夏場はスポットクーラーあり。",
     "dogAreaCategories": [
       "外席OK"
@@ -1940,7 +1990,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": true,
+    "isVisited": true
   },
   {
     "id": "shop-60",
@@ -1966,7 +2018,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E6%9D%B1%E4%BA%AC%E3%81%84%E3%81%A1%E3%81%94%E3%82%AB%E3%83%95%E3%82%A7/data=!4m2!3m1!1s0x6018e5062c665ebb:0xd95b7d27452348be",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13263467/",
     "instagramUrl": "https://www.instagram.com/fuchu.ichigogarien/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "外席ワンコ🆗。イステーブルがあるのみで、雨除け日除けもなし。",
     "dogAreaCategories": [
       "外席OK"
@@ -1974,7 +2025,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://fuchu-ichigogari.com/cafe/"
+    "officialSiteUrl": "https://fuchu-ichigogari.com/cafe/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-18",
@@ -2000,7 +2053,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E6%B9%98%E5%8D%97%E3%83%91%E3%83%B3%E3%82%B1%E3%83%BC%E3%82%AD+%E5%BA%9C%E4%B8%AD%E5%BA%97/data=!4m2!3m1!1s0x6018e5d5f79a77a1:0x9211e9f94272ba6a",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13270027/",
     "instagramUrl": "https://www.instagram.com/shonan.pancake/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗、駅架線下にあるため、雨除け日除けは問題なし。",
     "dogAreaCategories": [
       "テラス席OK"
@@ -2008,7 +2060,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://shounan-pancake.jp/"
+    "officialSiteUrl": "https://shounan-pancake.jp/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-17",
@@ -2034,7 +2088,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E3%82%AB%E3%83%95%E3%82%A7%E3%83%BB%E3%83%89%E3%83%BB%E3%82%AF%E3%83%AA%E3%82%A8+%E3%82%B1%E3%83%A4%E3%82%AD%E3%82%B2%E3%83%BC%E3%83%88%E5%BA%9C%E4%B8%AD%E5%BA%97/data=!4m2!3m1!1s0x6018e5a2103dde41:0x93d259f82109446d",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13262609/",
     "instagramUrl": "https://www.instagram.com/cafedecrie/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "テラス席ワンコ🆗、商業施設内のため屋根があり、日除け雨除けは問題なし。",
     "dogAreaCategories": [
       "テラス席OK"
@@ -2042,7 +2095,9 @@
     "dogAreaFilterGroups": [
       "テラス・外席"
     ],
-    "officialSiteUrl": "https://c-united.co.jp/store/detail/001588/"
+    "officialSiteUrl": "https://c-united.co.jp/store/detail/001588/",
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-19",
@@ -2068,7 +2123,6 @@
     "googleMapsUrl": "https://www.google.com/maps/place/%E5%B1%B1%E7%94%B0%E5%B1%8B/data=!4m2!3m1!1s0x6018e4e704119861:0x65602c3c9c39675c",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13277834/",
     "instagramUrl": null,
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "店内は条件付きでワンコ🆗。\nおとなしく出来て他客が問題なければ店内利用可能。\n東京競馬場G1開催日、または暖期の他会場G1開催日は外席が設置され山田屋だけでなく他の隣店もワンコ🆗。",
     "dogAreaCategories": [
       "店内OK",
@@ -2078,12 +2132,13 @@
       "店内OK",
       "テラス・外席"
     ],
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   },
   {
     "id": "shop-61",
     "slug": "fuchu-61",
-    "isVisible": true,
     "name": "博多キッチン もぐもぐ",
     "prefecture": "東京都",
     "city": "府中市",
@@ -2111,8 +2166,9 @@
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=%E5%8D%9A%E5%A4%9A%E3%82%AD%E3%83%83%E3%83%81%E3%83%B3+%E3%82%82%E3%81%90%E3%82%82%E3%81%90+%E5%BA%9C%E4%B8%AD",
     "tabelogUrl": "https://tabelog.com/tokyo/A1326/A132602/13276816/",
     "instagramUrl": "https://www.instagram.com/mono2_mogu2/",
-    "visitStatus": "ピロプー訪店済",
     "sourceCsvMemo": "外席ペットOKです。",
-    "officialSiteUrl": null
+    "officialSiteUrl": null,
+    "isHidden": false,
+    "isVisited": true
   }
 ]

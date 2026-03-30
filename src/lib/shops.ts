@@ -1,10 +1,5 @@
 import shopsData from "@/data/shops.json";
-import type {
-  DogAreaCategory,
-  DogAreaFilterGroup,
-  Shop,
-  VisitStatus,
-} from "@/types/shop";
+import type { DogAreaCategory, DogAreaFilterGroup, Shop } from "@/types/shop";
 
 function unique<T>(values: T[]): T[] {
   return Array.from(new Set(values));
@@ -62,7 +57,7 @@ function normalizeShop(shop: Shop): Shop {
 
   return {
     ...shop,
-    isVisible: shop.isVisible !== false,
+    isVisible: shop.isHidden !== true,
     dogAreaCategories: unique(dogAreaCategories),
     dogAreaFilterGroups: unique(dogAreaFilterGroups),
   };
@@ -99,6 +94,6 @@ export function getDogAreaFilterGroups(): DogAreaFilterGroup[] {
   ) as DogAreaFilterGroup[];
 }
 
-export function getVisitStatuses(): VisitStatus[] {
-  return Array.from(new Set(shops.map((shop) => shop.visitStatus))) as VisitStatus[];
+export function getVisitedValues(): boolean[] {
+  return Array.from(new Set(shops.map((shop) => shop.isVisited))).sort();
 }

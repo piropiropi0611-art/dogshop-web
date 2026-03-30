@@ -313,7 +313,7 @@ export function buildKeywordText(shop) {
     shop.prefecture,
     shop.city,
     shop.address,
-    shop.visitStatus,
+    shop.isVisited ? "ピロプー訪店済" : "未訪店",
     shop.intro,
     shop.memo,
     shop.sourceCsvMemo,

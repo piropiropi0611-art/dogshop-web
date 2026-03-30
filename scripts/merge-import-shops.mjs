@@ -87,8 +87,15 @@ export async function mergeImportShops(options = {}) {
     );
 
     if (currentShop) {
+      currentShop.isHidden = previewShop.isHidden ?? false;
+      delete currentShop.isVisible;
+      delete currentShop.hidden;
       currentShop.officialSiteUrl = previewShop.officialSiteUrl ?? null;
       currentShop.tabelogUrl = previewShop.tabelogUrl ?? null;
+      currentShop.isVisited = previewShop.isVisited ?? false;
+      delete currentShop.visitStatus;
+      delete currentShop.visited;
+      currentShop.keywordText = buildKeywordText(currentShop);
       matchedCount += 1;
       continue;
     }
@@ -98,7 +105,7 @@ export async function mergeImportShops(options = {}) {
       ...previewShop,
       id: formatSequence("shop", nextShopId, 2),
       slug: formatSequence(publicSlugPrefix, nextPublicSlug, publicSlugPadding),
-      isVisible: previewShop.isVisible ?? true,
+      isHidden: previewShop.isHidden ?? false,
       lat: geocoded.lat,
       lng: geocoded.lng,
       geocodeSource: geocoded.geocodeSource,

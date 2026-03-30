@@ -6,11 +6,12 @@ export type DogAreaCategory =
 
 export type DogAreaFilterGroup = "店内OK" | "テラス・外席" | "その他";
 export type GeocodeStatus = "ok" | "fallback" | "missing";
-export type VisitStatus = "ピロプー訪店済" | "未訪店";
 
 export type Shop = {
   id: string;
   slug: string;
+  isHidden?: boolean;
+  isVisited: boolean;
   isVisible?: boolean;
   name: string;
   prefecture: string;
@@ -38,6 +39,5 @@ export type Shop = {
   officialSiteUrl: string | null;
   tabelogUrl: string | null;
   instagramUrl: string | null;
-  visitStatus: VisitStatus;
   sourceCsvMemo: string | null;
 };

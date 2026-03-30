@@ -6,6 +6,10 @@ import { ShopLinkIcons } from "@/components/shop-link-icons";
 import ShopMap from "@/components/shop-map";
 import { getAllShops, getShopBySlug } from "@/lib/shops";
 
+function visitedLabel(isVisited: boolean) {
+  return isVisited ? "ピロプー訪店済" : "未訪店";
+}
+
 type ShopPageProps = {
   params: Promise<{
     slug: string;
@@ -72,7 +76,7 @@ export default async function ShopPage({ params }: ShopPageProps) {
               </span>
             ))}
             <span className="rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
-              {shop.visitStatus}
+              {visitedLabel(shop.isVisited)}
             </span>
           </div>
           <h1 className="mt-5 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
@@ -133,7 +137,7 @@ export default async function ShopPage({ params }: ShopPageProps) {
               </div>
               <div>
                 <dt className="font-semibold text-zinc-900">訪店ステータス</dt>
-                <dd>{shop.visitStatus}</dd>
+                <dd>{visitedLabel(shop.isVisited)}</dd>
               </div>
               <div>
                 <dt className="font-semibold text-zinc-900">ワンコメニュー</dt>

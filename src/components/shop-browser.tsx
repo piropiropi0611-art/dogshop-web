@@ -4,7 +4,12 @@ import { useMemo, useState } from "react";
 
 import { ShopCard } from "@/components/shop-card";
 import { ShopsMap } from "@/components/shops-map";
-import type { DogAreaFilterGroup, Shop, VisitStatus } from "@/types/shop";
+import type { DogAreaFilterGroup, Shop } from "@/types/shop";
+
+const IS_VISITED_OPTIONS = [
+  { value: "true", label: "ピロプー訪店済" },
+  { value: "false", label: "未訪店" },
+] as const;
 
 type ShopBrowserProps = {
   shops: Shop[];
@@ -15,7 +20,7 @@ export function ShopBrowser({ shops }: ShopBrowserProps) {
   const [city, setCity] = useState("");
   const [keyword, setKeyword] = useState("");
   const [dogArea, setDogArea] = useState<DogAreaFilterGroup | "">("");
-  const [visitStatus, setVisitStatus] = useState<VisitStatus | "">("");
+  const [isVisited, setIsVisited] = useState<"" | "true" | "false">("");
   const [selectedSlug, setSelectedSlug] = useState<string | null>(
     shops[0]?.slug ?? null,
   );
@@ -41,11 +46,6 @@ export function ShopBrowser({ shops }: ShopBrowserProps) {
     [shops],
   );
 
-  const visitStatuses = useMemo(
-    () => ["ピロプー訪店済", "未訪店"],
-    [],
-  );
-
   const filteredShops = useMemo(() => {
     const normalizedKeyword = keyword.trim().toLowerCase();
 
@@ -62,7 +62,7 @@ export function ShopBrowser({ shops }: ShopBrowserProps) {
         return false;
       }
 
-      if (visitStatus && shop.visitStatus !== visitStatus) {
+      if (isVisited && String(shop.isVisited) !== isVisited) {
         return false;
       }
 
@@ -75,7 +75,7 @@ export function ShopBrowser({ shops }: ShopBrowserProps) {
 
       return true;
     });
-  }, [city, dogArea, keyword, prefecture, shops, visitStatus]);
+  }, [city, dogArea, keyword, prefecture, shops, isVisited]);
 
   const activeSlug = filteredShops.some((shop) => shop.slug === selectedSlug)
     ? selectedSlug
@@ -151,16 +151,14 @@ export function ShopBrowser({ shops }: ShopBrowserProps) {
           <label className="space-y-2 text-sm font-medium text-zinc-700">
             <span>訪店ステータス</span>
             <select
-              value={visitStatus}
-              onChange={(event) =>
-                setVisitStatus(event.target.value as VisitStatus | "")
-              }
+              value={isVisited}
+              onChange={(event) => setIsVisited(event.target.value as "" | "true" | "false")}
               className="w-full rounded-2xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-900 outline-none transition focus:border-green-600"
             >
               <option value="">すべて</option>
-              {visitStatuses.map((option) => (
-                <option key={option} value={option}>
-                  {option}
+              {IS_VISITED_OPTIONS.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
                 </option>
               ))}
             </select>
@@ -178,7 +176,7 @@ export function ShopBrowser({ shops }: ShopBrowserProps) {
               setCity("");
               setKeyword("");
               setDogArea("");
-              setVisitStatus("");
+              setIsVisited("");
             }}
             className="rounded-full border border-zinc-200 px-4 py-2 font-medium text-zinc-700 transition hover:border-zinc-300 hover:bg-zinc-50"
           >
