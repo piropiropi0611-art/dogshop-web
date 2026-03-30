@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "eslint",
     "build:data:preview": "node ./scripts/build-import-preview.mjs",
-    "build:data:merge": "node ./scripts/merge-import-shops.mjs"
+    "build:data:merge": "node ./scripts/merge-import-shops.mjs",
+    "vercel:pull:prod": "node ./scripts/vercel-production.mjs pull",
+    "vercel:build:prod": "node ./scripts/vercel-production.mjs build",
+    "vercel:deploy:prod:direct": "node ./scripts/vercel-production.mjs deploy"
   },
   "dependencies": {
     "leaflet": "^1.9.4",
@@ -26,6 +29,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vercel": "^50.37.3"
   }
 }

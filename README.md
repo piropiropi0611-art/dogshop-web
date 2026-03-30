@@ -153,4 +153,36 @@ gh auth switch --user piropiropi0611-art
 
 ## デプロイ
 
-Vercel へは `dogshop-web` ディレクトリをプロジェクトルートとしてデプロイします。
+通常の本番デプロイは、GitHub に push して Vercel 連携デプロイを発火させます。
+
+### 通常運用
+
+```bash
+git push origin HEAD
+```
+
+### 非常用の直デプロイ
+
+GitHub 連携でのデプロイが使えない場合は、このリポジトリから Vercel CLI で直接本番反映できます。
+
+前提:
+
+- `npm install` 済みであること
+- `.vercel/project.json` が存在すること
+- Vercel へアクセスできる環境であること
+
+利用コマンド:
+
+```bash
+npm run vercel:pull:prod
+npm run vercel:build:prod
+npm run vercel:deploy:prod:direct
+```
+
+補足:
+
+- `vercel:pull:prod` は production の project settings と環境変数を取得
+- `vercel:build:prod` は `pull -> vercel build --prod`
+- `vercel:deploy:prod:direct` は `pull -> build -> deploy --prebuilt --prod`
+- 直デプロイ系スクリプトは `.vercel/project.json` の `projectId` / `orgId` を自動利用する
+- `.vercelignore` で `.next` と `node_modules` をアップロード対象から外している
